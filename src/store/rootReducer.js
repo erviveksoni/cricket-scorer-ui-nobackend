@@ -4,7 +4,7 @@ import thisOverReducer from '../ThisOver/reducer';
 
 const rootReducer = combineReducers({
   gameInformation: gameInformationReducer,
-  thisOver: thisOverReducer
+  thisOver: thisOverReducer,
 });
 
 export default rootReducer;
