@@ -1,3 +1,4 @@
+
 const getRecordBatsmanScoreAction = function getRecordBatsmanScoreAction(runs) {
   const getaction = {
     type: 'RECORD_BATSMAN_SCORE',
