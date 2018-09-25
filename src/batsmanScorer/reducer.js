@@ -28,18 +28,16 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
     case 'RECORD_BATSMAN_SCORE': {
       const cloneState = Object.assign({}, state);
 
-      let currentBatsman = cloneState.firstInning.battingCard.players
+      const currentBatsman = cloneState.battingTeamPlayers
         .filter(item => item.id === cloneState.strikerBatsmanId);
 
-      currentBatsman = currentBatsman.any();
-
       if (action.runs === 4) {
-        currentBatsman.fours += 1;
+        currentBatsman[0].fours += 1;
       } else if (action.runs === 6) {
-        currentBatsman.sixes += 1;
+        currentBatsman[0].sixes += 1;
       }
 
-      currentBatsman.runs += action.runs;
+      currentBatsman[0].runs += action.runs;
 
       return cloneState;
     }
