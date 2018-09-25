@@ -33,9 +33,13 @@ const CurrentScoreHandling = props =>
       <Row>
         <Col md={{ size: 6, offset: 3 }} sm="12">
           <Row>
-            <Col>
+            <Col md="5" xs="4">
+              {props.bowlingTeam}
+            </Col>
+
+            <Col sm="1" xs="2" />
+            <Col className="text-align-right">
               <p>
-                {props.bowlingTeam} scored&nbsp;
                 {props.previousInningScore.runsScored}/
                 {props.previousInningScore.wicketsFallen} in&nbsp;
                 {props.previousInningScore.oversBowled}
