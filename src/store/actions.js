@@ -7,4 +7,16 @@ const getRecordBatsmanScoreAction = function getRecordBatsmanScoreAction(runs) {
   return getaction;
 };
 
-export default getRecordBatsmanScoreAction;
+const getTotalScoreUpdateAction =
+function getTotalScoreUpdateAction(runs, incrementOver, incrementWicket) {
+  const getaction = {
+    type: 'UPDATE_CURRENT_INNING_SCORE',
+    runs,
+    incrementOver,
+    incrementWicket,
+  };
+
+  return getaction;
+};
+
+export { getRecordBatsmanScoreAction, getTotalScoreUpdateAction };
