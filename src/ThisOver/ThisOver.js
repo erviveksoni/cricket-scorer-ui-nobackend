@@ -32,4 +32,6 @@ const mapStateAsProps = state => ({
   currentBowlerId: state.thisOver.currentBowlerId,
   playersArr: state.thisOver.players,
 });
+
 export default connect(mapStateAsProps)(ThisOver);
+
