@@ -85,3 +85,26 @@ describe('gameInformation/reducer', () => {
     expect(reducer(initialState, getaction)).toEqual(expectedState);
   });
 });
+
+
+describe('gameInformation/reducer', () => {
+  it('shouldAdd6Runs1Over1WicketToTotalScore', () => {
+    const initialState = cloneDeep(constState);
+    initialState.currentBowlsBowled += 5;
+
+    const expectedState = cloneDeep(constState);
+    expectedState.currentInningScore.runsScored += 4;
+    expectedState.currentInningScore.wicketsFallen += 1;
+    expectedState.currentInningScore.oversBowled += 1;
+    expectedState.currentBowlsBowled += 0;
+
+    const getaction = {
+      type: 'UPDATE_CURRENT_INNING_SCORE',
+      runs: 4,
+      incrementBalls: true,
+      incrementWicket: true,
+    };
+
+    expect(reducer(initialState, getaction)).toEqual(expectedState);
+  });
+});
