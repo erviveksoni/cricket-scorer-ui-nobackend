@@ -1,23 +1,20 @@
 import React from 'react';
-import Button from 'reactstrap/lib/Button';
+import { connect } from 'react-redux';
 import Container from 'reactstrap/lib/Container';
-import Row from 'reactstrap/lib/Row';
-import Col from 'reactstrap/lib/Col';
 import './Home.css';
-import { createGameAction } from "./actions";
-import {connect} from 'react-redux';
+import { createGameAction } from './actions';
+import ThisOver from '../ThisOver/ThisOver';
 
-const Home = (props) =>
-  <Container className="h-100">
-    <Row className="align-items-center h-100">
-      <Col className="text-center">
-        <Button color="primary" onClick={props.createGame}>Create Game</Button>
-      </Col>
-    </Row>
-  </Container>;
 
-const mapDispatchToProps = (dispatch) => ({
-  createGame: () => dispatch(createGameAction())
+const Home = () =>
+  (
+    <Container className="h-100">
+      <ThisOver />
+    </Container>
+  );
+
+const mapDispatchToProps = dispatch => ({
+  createGame: () => dispatch(createGameAction()),
 });
 
 export default connect(undefined, mapDispatchToProps)(Home);
