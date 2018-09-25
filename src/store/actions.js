@@ -19,4 +19,4 @@ function getTotalScoreUpdateAction(runs, incrementBalls, incrementWicket) {
   return getaction;
 };
 
-export { getRecordBatsmanScoreAction, getTotalScoreUpdateAction };
+export default { getRecordBatsmanScoreAction, getTotalScoreUpdateAction };
