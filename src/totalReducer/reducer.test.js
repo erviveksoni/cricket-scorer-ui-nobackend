@@ -2,6 +2,10 @@ import cloneDeep from 'lodash/cloneDeep';
 import reducer from './reducer';
 
 const constState = {
+  bowlingTeam: 'Team2',
+  battingTeam: 'Team1',
+  currentBowlsBowled: 0,
+  totalOvers: 20,
   previousInningScore: {
     runsScored: 0,
     wicketsFallen: 0,
@@ -34,7 +38,7 @@ describe('gameInformation/reducer', () => {
     const getaction = {
       type: 'UPDATE_CURRENT_INNING_SCORE',
       runs: 4,
-      incrementOver: false,
+      incrementBalls: false,
       incrementWicket: false,
     };
 
@@ -53,7 +57,7 @@ describe('gameInformation/reducer', () => {
     const getaction = {
       type: 'UPDATE_CURRENT_INNING_SCORE',
       runs: 4,
-      incrementOver: false,
+      incrementBalls: false,
       incrementWicket: true,
     };
 
@@ -67,12 +71,14 @@ describe('gameInformation/reducer', () => {
 
     const expectedState = cloneDeep(constState);
     expectedState.currentInningScore.runsScored += 4;
-    expectedState.currentInningScore.oversBowled += 1;
     expectedState.currentInningScore.wicketsFallen += 1;
+    expectedState.currentInningScore.oversBowled += 0;
+    expectedState.currentBowlsBowled += 1;
+
     const getaction = {
       type: 'UPDATE_CURRENT_INNING_SCORE',
       runs: 4,
-      incrementOver: true,
+      incrementBalls: true,
       incrementWicket: true,
     };
 

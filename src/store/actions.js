@@ -8,11 +8,11 @@ const getRecordBatsmanScoreAction = function getRecordBatsmanScoreAction(runs) {
 };
 
 const getTotalScoreUpdateAction =
-function getTotalScoreUpdateAction(runs, incrementOver, incrementWicket) {
+function getTotalScoreUpdateAction(runs, incrementBalls, incrementWicket) {
   const getaction = {
     type: 'UPDATE_CURRENT_INNING_SCORE',
     runs,
-    incrementOver,
+    incrementBalls,
     incrementWicket,
   };
 
