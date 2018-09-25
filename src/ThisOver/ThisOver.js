@@ -4,7 +4,7 @@ import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import './ThisOver.css';
-
+//import { createGameAction } from "./actions";
 class ThisOver extends Component {
     getBowlerName(bowlerId, playersArr) {
         for (let i = 0; i < playersArr.length; i++) {
@@ -12,7 +12,7 @@ class ThisOver extends Component {
                 return playersArr[i].name;
             }
         }
-        // return playersArr.filter((item) => {item.id === bowlerId}).reduce((acc, item) => {acc = item.name});
+        //return playersArr.filter((item) => {item.id === bowlerId}).reduce((acc, item) => {acc = item.name});
     }
     render() {
         return (
@@ -22,14 +22,19 @@ class ThisOver extends Component {
                         <Row className="align-items-center h-100"><span>This Over</span></Row>
                         <Row className="align-items-center h-100"><span>Bowler:</span><span>{this.getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span></Row>
                     </Col>
-                    <Col className="text-center" />
+                    <Col className="text-center">
+
+                    </Col>
                 </Row>
             </Container>
         );
     }
 }
-const mapStateAsProps = (state) => {
-    currentBowlerId: state.thisOver.currentBowlerId,
+const mapStateAsProps = state => {
+    return {
+        currentBowlerId: state.thisOver.currentBowlerId,
         playersArr: state.thisOver.players
+    }
 };
 export default connect(mapStateAsProps)(ThisOver);
+
