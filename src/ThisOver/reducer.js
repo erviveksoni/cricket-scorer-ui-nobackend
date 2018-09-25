@@ -1,23 +1,13 @@
 const initialState = {
-  currentBowlerId: 1,
-  players: [
-    {
-      name: 'Wasim',
-      id: 1,
-      runs: 0,
-      overs: 0,
-      madins: 0,
-      wickets: 0,
-    },
-    {
-      name: 'Shoeb',
-      id: 2,
-      runs: 0,
-      overs: 0,
-      madins: 0,
-      wickets: 0,
-    },
+  currentOver: [
+    '1',
+    'w',
+    '6-N',
+    'd',
+    '2-b',
+    '1-lb',
   ],
+  currentBowlerId: 1,
 };
 
 const thisOverReducer = function thisOverReducer(state = initialState) {
