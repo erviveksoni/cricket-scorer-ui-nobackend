@@ -24,20 +24,25 @@ class ThisOver extends Component {
             <Row className="align-items-center h-100"><span>This Over</span></Row>
             <Row className="align-items-center h-100"><span>Bowler:</span><span>{getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span></Row>
           </Col>
-          <Col className="text-center" />
+          <Col className="text-center">
+            <Row className="align-items-center h-100">{this.props.currentOver}</Row>
+          </Col>
         </Row>
       </Container>
     );
   }
 }
-const mapStateAsProps = state => ({
-  currentBowlerId: state.thisOver.currentBowlerId,
-  playersArr: state.thisOver.players,
-});
+const mapStateAsProps = state => (
+  {
+    currentBowlerId: state.thisOver.currentBowlerId,
+    playersArr: state.bowlerScorer.bowlingTeamPlayers,
+    currentOver: state.thisOver.currentOver,
+  });
 
 ThisOver.propTypes = {
   currentBowlerId: PropTypes.number.isRequired,
   playersArr: PropTypes.arrayOf(PropTypes.object).isRequired,
+  currentOver: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 

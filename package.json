@@ -6,6 +6,7 @@
     "@types/classnames": "^2.2.6",
     "bootstrap": "^4.1.1",
     "history": "^4.7.2",
+    "jslint": "^0.12.0",
     "lodash": "^4.17.11",
     "lodash.clonedeep": "^4.5.0",
     "prop-types": "^15.6.1",

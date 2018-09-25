@@ -1,7 +1,15 @@
 {
-    "oversBowled": 0,
-    "validBallsInCurrentOver": 0,
-    "wicketsFallen": 0,
+    "previousInningScore": {
+        "runsScored": 150,
+        "wicketsFallen": 7,
+        "oversBowled": 20
+    },
+    "currentInningScore": {
+        "runsScored": 120,
+        "wicketsFallen": 4,
+        "oversBowled": 10
+    },
+    "validBallsInCurrentOver": 4,
     "currentOver": [
         "1",
         "w",
@@ -35,7 +43,6 @@
     "strikerBatsmanId": 1,
     "nonstrikerBatsmanId": 1,
     "battingScore": 0,
-    "runsScored": 0,
     "battingTeam": "Team1",
     "battingTeamPlayers": [
         {

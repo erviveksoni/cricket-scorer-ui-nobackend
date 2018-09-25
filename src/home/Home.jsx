@@ -5,11 +5,13 @@ import './Home.css';
 import { createGameAction } from './actions';
 import ThisOver from '../ThisOver/ThisOver';
 import Scorer from '../scorer/scorer';
+import CurrentScoreHeading from '../ScoreHeader/CurrentScoreHeading';
 
 
 const Home = () =>
   (
     <Container className="h-100">
+      <CurrentScoreHeading />
       <ThisOver />
       <Scorer />
     </Container>
