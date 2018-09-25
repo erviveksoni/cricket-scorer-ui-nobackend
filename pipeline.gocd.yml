@@ -36,4 +36,4 @@ pipelines:
                 - node-and-java
               tasks:
                 - script: |
-                    sh ./buildAndDeploy/deploy.sh team1-bootcamp-june2018
+                    sh ./buildAndDeploy/deploy.sh team1-bootcamp-sept2018

@@ -4,7 +4,7 @@ Description: Creates an S3 website bucket for storing static HTML + JS + CSS fil
 Parameters:
  tagName:
     Type: String
-    Description: The training session name such as bootcampFeb2018 or extendedPaatshalaMarch2018
+    Description: team1-bootcamp-sept2018
 
 Resources:
   UIS3Bucket:
