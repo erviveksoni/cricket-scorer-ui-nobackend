@@ -66,7 +66,7 @@ describe('gameInformation/reducer', () => {
 });
 
 describe('gameInformation/reducer', () => {
-  it('shouldAdd6Runs1Over1WicketToTotalScore', () => {
+  it('shouldAdd6Runs1Ball1WicketToTotalScore', () => {
     const initialState = cloneDeep(constState);
 
     const expectedState = cloneDeep(constState);
