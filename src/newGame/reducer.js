@@ -61,7 +61,8 @@ const reducer = (state = initialState, action) => {
         case "RECORD_BATSMAN_SCORE":
             let cloneState = Object.assign({}, state);
 
-            let currentBatsman = cloneState.firstInning.battingCard.players.filter(item => item.id === cloneState.strikerBatsmanId);
+            let currentBatsman = cloneState.firstInning.battingCard.players
+            .filter(item => item.id === cloneState.strikerBatsmanId);
             currentBatsman = currentBatsman[0]
             if (action.runs == 4) {
                 currentBatsman.fours += 1;
