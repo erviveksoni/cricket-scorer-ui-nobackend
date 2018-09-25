@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, HashRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter, NavLink } from 'react-router-dom';
 import GameDetails from '../gameDetails/GameDetails';
 import Home from '../home/Home';
+import './routes.css';
 
 export const Routes = {
   HOME: '/',
@@ -13,10 +14,14 @@ export const Routes = {
 const AppRouter = () =>
   (
     <HashRouter>
-      <Switch>
+      <div className="inherit-height">
+        <ul className="header">
+          <li><NavLink exact to={Routes.HOME}>Game Scorer</NavLink></li>
+          <li><NavLink to={Routes.GAME_DETAILS}>Game Details</NavLink></li>
+        </ul>
         <Route exact path={Routes.HOME} component={Home} />
         <Route path={Routes.GAME_DETAILS} component={GameDetails} />
-      </Switch>
+      </div>
     </HashRouter>
   );
 
