@@ -4,12 +4,14 @@ import Container from 'reactstrap/lib/Container';
 import './Home.css';
 import { createGameAction } from './actions';
 import ThisOver from '../ThisOver/ThisOver';
+import Scorer from '../scorer/scorer';
 
 
 const Home = () =>
   (
     <Container className="h-100">
       <ThisOver />
+      <Scorer />
     </Container>
   );
 

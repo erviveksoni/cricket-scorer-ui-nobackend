@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
-import Scorer from '../scorer/Scorer';
+import Scorer from '../scorer/scorer';
 import GameDetails from '../gameDetails/GameDetails';
 import Home from '../home/Home';
 import history from './history';
