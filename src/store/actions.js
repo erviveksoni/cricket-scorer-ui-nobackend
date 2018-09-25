@@ -1,17 +1,10 @@
-const getRecordBatsmanScoreAction = function (runs) {
-    const getaction = {
-        type: "RECORD_BATSMAN_SCORE",
-        runs: runs
-    };
+const getRecordBatsmanScoreAction = function getRecordBatsmanScoreAction(runs) {
+  const getaction = {
+    type: 'RECORD_BATSMAN_SCORE',
+    runs,
+  };
 
-    return getaction;
+  return getaction;
 };
 
-const getIncrementBownAction = function (runs) {
-    const getaction = {
-        type: "INCREMENT_BOWL_COUNT"
-    };
-
-    return getaction;
-};
-
+export default getRecordBatsmanScoreAction;
