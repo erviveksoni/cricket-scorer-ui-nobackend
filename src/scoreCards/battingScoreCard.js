@@ -17,7 +17,7 @@ const BattingScoreCard = (props) => {
   function strikeRate(row) {
     let calcStrikeRate = 0;
     if (row.ballsplayed !== 0) {
-      calcStrikeRate = (row.runs / row.ballsplayed) * 100;
+      calcStrikeRate = ((row.runs / row.ballsplayed) * 100).toFixed(2);
     }
     return (<span className="bst-no-select">{calcStrikeRate}</span>);
   }
