@@ -4,7 +4,7 @@ import actionNames from '../store/actionConstants';
 
 const constState = {
   strikerBatsmanId: 1,
-  nonstrikerBatsmanId: 1,
+  nonstrikerBatsmanId: 2,
   battingTeamPlayers: [
     {
       name: 'Sachin',
@@ -42,9 +42,14 @@ describe('batsmanScorer/reducer', () => {
 
     const inputState = cloneDeep(constState);
 
+    const lastbowl = {};
+    lastbowl.runs = 4;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+
     const getaction = {
       type: actionNames.NextBallActionName,
-      runs: 4,
+      lastbowl,
     };
 
     initialState.battingTeamPlayers[0].fours += 1;
@@ -61,9 +66,14 @@ describe('batsmanScorer/reducer', () => {
 
     const inputState = cloneDeep(constState);
 
+    const lastbowl = {};
+    lastbowl.runs = 6;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+
     const getaction = {
       type: actionNames.NextBallActionName,
-      runs: 6,
+      lastbowl,
     };
 
     initialState.battingTeamPlayers[0].sixes += 1;

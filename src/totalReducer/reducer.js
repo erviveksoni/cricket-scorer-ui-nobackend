@@ -22,13 +22,13 @@ const totalScorerReducer = function totalScorerReducer(state = initialState, act
     case actionNames.NextBallActionName: {
       const cloneState = Object.assign({}, state);
 
-      cloneState.currentInningScore.runsScored += action.runs;
+      cloneState.currentInningScore.runsScored += action.lastbowl.runs;
 
-      if (action.wicket) {
+      if (action.lastbowl.wicket) {
         cloneState.currentInningScore.wicketsFallen += 1;
       }
 
-      if (action.incrementBalls) {
+      if (action.lastbowl.incrementBalls) {
         cloneState.currentBowlsBowled += 1;
       }
 

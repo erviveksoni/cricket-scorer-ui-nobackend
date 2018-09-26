@@ -1,15 +1,15 @@
 {
     "previousInningScore": {
-        "runsScored": 150,
-        "wicketsFallen": 7,
+        "runsScored": 0,
+        "wicketsFallen": 0,
         "oversBowled": 20
     },
     "currentInningScore": {
-        "runsScored": 120,
-        "wicketsFallen": 4,
-        "oversBowled": 10
+        "runsScored": 0,
+        "wicketsFallen": 0,
+        "oversBowled": 0
     },
-    "validBallsInCurrentOver": 4,
+    "validBallsInCurrentOver": 0,
     "currentOver": [
         "1",
         "w",

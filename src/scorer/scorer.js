@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
-import { getNextBallAction } from '../store/actions';
+import getNextBallAction from '../store/actions';
 import './scorer.css';
 
 
@@ -29,7 +29,7 @@ class Scorer extends Component {
       lastbowl.wicket = false;
       lastbowl.extras = null;
 
-      this.props.performaction(run);
+      this.props.performaction(lastbowl);
     }
   }
 
