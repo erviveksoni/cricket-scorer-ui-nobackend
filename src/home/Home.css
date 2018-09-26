@@ -13,7 +13,7 @@ html, body {
 .wrapper {
     border: 1px black solid;
     margin-left: 12%;
-    /* text-align: right */
+    height: 95%;
 }
 .text-align-center{
     text-align: center

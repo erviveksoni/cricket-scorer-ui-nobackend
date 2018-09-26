@@ -1,22 +1,21 @@
-ul.header li {
-    display: inline;
-    list-style-type: none;
-    margin: 0;
-  }
-  ul.header {
-    background-color: #111;
-    padding: 0;
-  }
-  ul.header li a {
-    color: #FFF;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 20px;
-    display: inline-block;
-  }
-  .active {
-    background-color: #0099FF;
-  }
-  div.inherit-height {
-    height: inherit;
+ul.nav-list li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+}
+ul.nav-list{
+  float: left;
+  margin-top: 4%;
+  margin-left: 7%;
+}
+.nav-btn{
+  width: 100%;
+  font-size: 80%;
+  margin-top: 12%;
+}
+.header {
+  background-color: #111;
+  color: #FFF;
+  height: 7%;
+  padding: 1%;
   }

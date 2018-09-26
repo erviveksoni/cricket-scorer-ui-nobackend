@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
+import { Button } from 'reactstrap';
 import getNextBallAction from '../store/actions';
 import './scorer.css';
 
@@ -52,13 +53,8 @@ class Scorer extends Component {
               <button className={this.state.activeRunButton === 'runbtn-5' ? 'runbtn active' : 'runbtn'} value="5" onClick={() => this.setState({ activeRunButton: 'runbtn-5' })}>5</button>
               &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-6' ? 'runbtn active' : 'runbtn'} value="6" onClick={() => this.setState({ activeRunButton: 'runbtn-6' })}>6</button>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div>
-              <button className="submitbtn" onClick={this.nextball}>Next Ball</button>
+              &nbsp;&nbsp;
+              <Button color="success" className="submitbtn" onClick={this.nextball}>Next Ball</Button>
             </div>
           </Col>
         </Row>

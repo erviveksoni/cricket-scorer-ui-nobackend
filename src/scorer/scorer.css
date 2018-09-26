@@ -1,6 +1,7 @@
 .runbtn{
     background-color: yellow;
-    color: black
+    color: black;
+    cursor:pointer
 }
 
 .active{
