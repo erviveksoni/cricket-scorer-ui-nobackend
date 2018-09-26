@@ -9,7 +9,8 @@ import { createGameAction } from './actions';
 
 const Home = () =>
   (
-    <Container className="h-100 w-75 wrapper">
+    <Container className="page-width">
+      <h3 className="text-align-center">GAME SCORER</h3>
       <CurrentScoreHeading />
       <ThisOver />
       <Scorer />

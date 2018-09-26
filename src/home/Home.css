@@ -12,11 +12,12 @@ html, body {
 }
 .wrapper {
     border: 1px black solid;
-    text-align: right
+    margin-left: 12%;
+    /* text-align: right */
 }
 .text-align-center{
     text-align: center
 }
-.page-heading{
-    text-align: center
+.page-width{
+    width:47%;
 }

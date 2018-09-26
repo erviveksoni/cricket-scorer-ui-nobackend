@@ -14,7 +14,7 @@ export const Routes = {
 const AppRouter = () =>
   (
     <HashRouter>
-      <div className="inherit-height">
+      <div className="inherit-height w-75 wrapper">
         <ul className="header">
           <li><NavLink exact to={Routes.HOME}>Game Scorer</NavLink></li>
           <li><NavLink to={Routes.GAME_STATS}>Game Stats</NavLink></li>
