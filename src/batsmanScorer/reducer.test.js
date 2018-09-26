@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import reducer from './reducer';
+import actionNames from '../store/actionConstants';
 
 const constState = {
   strikerBatsmanId: 1,
@@ -26,8 +27,8 @@ const constState = {
   ],
 };
 
-describe('gameInformation/reducer', () => {
-  it('initalstatetest', () => {
+describe('batsmanScorer/reducer', () => {
+  it('returnDefaultStateTest', () => {
     const initialState = cloneDeep(constState);
 
     expect(reducer(undefined, {})).toEqual(initialState);
@@ -35,14 +36,14 @@ describe('gameInformation/reducer', () => {
 });
 
 
-describe('gameInformation/reducer', () => {
+describe('batsmanScorer/reducer', () => {
   it('shouldIncrementBatsmanScoreOnValidDelivery_4', () => {
     const initialState = cloneDeep(constState);
 
     const inputState = cloneDeep(constState);
 
     const getaction = {
-      type: 'RECORD_BATSMAN_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 4,
     };
 
@@ -54,14 +55,14 @@ describe('gameInformation/reducer', () => {
 });
 
 
-describe('gameInformation/reducer', () => {
+describe('batsmanScorer/reducer', () => {
   it('shouldIncrementBatsmanScoreOnValidDelivery_6', () => {
     const initialState = cloneDeep(constState);
 
     const inputState = cloneDeep(constState);
 
     const getaction = {
-      type: 'RECORD_BATSMAN_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 6,
     };
 

@@ -1,3 +1,5 @@
+import actionNames from '../store/actionConstants';
+
 const initialState = {
   bowlingTeam: 'Team2',
   battingTeam: 'Team1',
@@ -17,12 +19,12 @@ const initialState = {
 
 const totalScorerReducer = function totalScorerReducer(state = initialState, action) {
   switch (action.type) {
-    case 'UPDATE_CURRENT_INNING_SCORE': {
+    case actionNames.NextBallActionName: {
       const cloneState = Object.assign({}, state);
 
       cloneState.currentInningScore.runsScored += action.runs;
 
-      if (action.incrementWicket) {
+      if (action.wicket) {
         cloneState.currentInningScore.wicketsFallen += 1;
       }
 
