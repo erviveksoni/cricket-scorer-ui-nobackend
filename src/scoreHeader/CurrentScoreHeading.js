@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 
 const CurrentScoreHandling = props =>
   (
-    <Container>
+    <div className="home-component" >
       <br />
       <Row>
-        <Col md={{ size: 6, offset: 3 }}>
+        <Col >
           <Row>
             <Col md="5" xs="4">
               <b>{props.battingTeam}</b>
@@ -31,7 +30,7 @@ const CurrentScoreHandling = props =>
       </Row>
       <br />
       <Row>
-        <Col md={{ size: 6, offset: 3 }} sm="12">
+        <Col >
           <Row>
             <Col md="5" xs="4">
               {props.bowlingTeam}
@@ -48,7 +47,7 @@ const CurrentScoreHandling = props =>
           </Row>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 
 CurrentScoreHandling.propTypes = {

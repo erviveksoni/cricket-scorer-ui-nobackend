@@ -13,7 +13,7 @@
     "currentOver": [
         "1",
         "w",
-        "6-N",
+        "6-nb",
         "d",
         "2-b",
         "1-lb"
@@ -28,6 +28,7 @@
             "id": "1",
             "runs": 0,
             "overs": 0,
+            "extras":0,
             "madins": 0,
             "wickets": 0
         },
@@ -36,6 +37,7 @@
             "id": "2",
             "runs": 0,
             "overs": 0,
+            "extras":0,
             "madins": 0,
             "wickets": 0
         }

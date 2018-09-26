@@ -1,4 +1,7 @@
-const initialState = {
+import cloneDeep from 'lodash/cloneDeep';
+import reducer from './reducer';
+
+const expectedInitialState = {
   currentOver: [
     { byBat: 1, extra: null, wicket: false },
     { byBat: 1, extra: null, wicket: false },
@@ -11,8 +14,10 @@ const initialState = {
   currentBowlerId: 1,
 };
 
-const thisOverReducer = function thisOverReducer(state = initialState) {
-  return state;
-};
 
-export default thisOverReducer;
+describe('ThisOver/reducer', () => {
+  it('defaultState should match ', () => {
+    const expectedOutput = cloneDeep(expectedInitialState);
+    expect(reducer(undefined, { type: 'default' })).toEqual(expectedOutput);
+  });
+});

@@ -9,3 +9,9 @@ html, body {
 .text-align-right{
     text-align: 'right'
 }
+.home-component {
+    margin-bottom : 15px;
+}
+.wrapper {
+    border: 1px black solid;
+}
