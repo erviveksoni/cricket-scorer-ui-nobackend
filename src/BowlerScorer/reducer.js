@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import actionNames from '../store/actionConstants';
 
 const initialState = {
@@ -66,15 +67,15 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
   };
   switch (action.type) {
     case actionNames.NextBallActionName: {
-      const newState = Object.assign({}, state);
+      const newState = cloneDeep(state);
       newState.bowlingTeamPlayers = state.bowlingTeamPlayers
         .map((item) => {
           const newItem = Object.assign({}, item);
           if (action.currentBowlerId === newItem.id) {
-            const runs = evalBall(action.ball);
+            const runs = evalBall(action.lastbowl);
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
-            if (action.ball.incrementBall) {
+            if (action.lastbowl.incrementBall) {
               newItem.currentOverBalls += 1;
               if (newItem.currentOverBalls === 6) {
                 newItem.totalOversBowled += 1;

@@ -38,7 +38,7 @@ describe('BowlerScorer/reducer', () => {
     const nextBallAction = {
       type: actionNames.NextBallActionName,
       currentBowlerId: 1,
-      ball: {
+      lastbowl: {
         runs: 1,
         extra: 'NB',
         wicket: false,
@@ -74,7 +74,7 @@ describe('BowlerScorer/reducer', () => {
     const nextBallAction = {
       type: 'NEXT_BALL',
       currentBowlerId: 1,
-      ball: {
+      lastbowl: {
         runs: 1,
         extra: 'LB',
         wicket: false,

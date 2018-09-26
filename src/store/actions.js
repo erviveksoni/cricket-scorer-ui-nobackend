@@ -2,10 +2,11 @@
 import actionNames from '../store/actionConstants';
 
 const getNextBallAction =
-  function getNextBallAction(lastbowl) {
+  function getNextBallAction(lastbowl, currentBowlerId) {
     const getaction = {
       type: actionNames.NextBallActionName,
       lastbowl,
+      currentBowlerId,
     };
 
     return getaction;

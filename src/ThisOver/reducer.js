@@ -1,32 +1,9 @@
 import cloneDeep from 'lodash/cloneDeep';
 import actionNames from '../store/actionConstants';
-import Constants from '../store/Constants';
 
 const initialState = {
-  currentOver: [
-    {
-      runs: 1, extra: null, wicket: false, incrementBall: true,
-    },
-    {
-      runs: 1, extra: null, wicket: false, incrementBall: true,
-    },
-    {
-      runs: 0, extra: null, wicket: true, incrementBall: true,
-    },
-    {
-      runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
-    },
-    {
-      runs: 0, extra: null, wicket: false, incrementBall: true,
-    },
-    {
-      runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBall: false,
-    },
-    {
-      runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
-    },
-  ],
-  noOfValidBallsInCurrentOver: 5,
+  currentOver: [],
+  noOfValidBallsInCurrentOver: 0,
   currentBowlerId: 1,
 };
 

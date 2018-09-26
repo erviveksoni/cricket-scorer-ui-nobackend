@@ -22,14 +22,13 @@ class Scorer extends Component {
     if (this.state.activeRunButton !== null) {
       let run = this.state.activeRunButton.replace('runbtn-', '');
       run = parseInt(run, 0);
-
-      const lastbowl = {};
-      lastbowl.runs = run;
-      lastbowl.wicket = false;
-      lastbowl.incrementBall = true;
-      lastbowl.extras = null;
-
-      this.props.performaction(lastbowl);
+      const lastbowl = {
+        runs: run,
+        wicket: false,
+        incrementBall: true,
+        extras: null,
+      };
+      this.props.performaction(lastbowl, this.props.currentBowlerId);
     }
   }
 
@@ -68,14 +67,18 @@ class Scorer extends Component {
 
 Scorer.propTypes = {
   performaction: PropTypes.func.isRequired,
+  currentBowlerId: PropTypes.number.isRequired,
 };
 
-const mapStatetoProps = () => null;
+const mapStateAsProps = state => (
+  {
+    currentBowlerId: state.thisOver.currentBowlerId,
+  });
 
 const mapDispatcherAsProps = dispatch => ({
-  performaction: (lastbowl) => {
-    dispatch(getNextBallAction(lastbowl));
+  performaction: (lastbowl, currentBowlerId) => {
+    dispatch(getNextBallAction(lastbowl, currentBowlerId));
   },
 });
 
-export default connect(mapStatetoProps, mapDispatcherAsProps)(Scorer);
+export default connect(mapStateAsProps, mapDispatcherAsProps)(Scorer);
