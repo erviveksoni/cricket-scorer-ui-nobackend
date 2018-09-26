@@ -23,7 +23,7 @@ class ThisOver extends Component {
     });
     return (
       <div className="home-component">
-        <Row>
+        <Row className="zero-margin">
           <Col>
             <Row ><span>This Over</span></Row>
             <Row >
