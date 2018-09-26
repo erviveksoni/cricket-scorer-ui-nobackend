@@ -1,22 +1,56 @@
-ul.header li {
-    display: inline;
-    list-style-type: none;
-    margin: 0;
+ul.nav-list li {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+}
+ul.nav-list{
+  float: left;
+  margin-top: 4%;
+  margin-left: 7%;
+}
+.nav-btn{
+  width: 100%;
+  font-size: 80%;
+}
+.header {
+  background-color: #111;
+  color: #FFF;
+  height: 7%;
+  padding: 1%;
   }
-  ul.header {
-    background-color: #111;
-    padding: 0;
+
+  .height-100{
+    height: 91%;
+    float:left;
+    background: #111;
+    width: 20%;
   }
-  ul.header li a {
-    color: #FFF;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 20px;
-    display: inline-block;
-  }
-  .active {
-    background-color: #0099FF;
-  }
-  div.inherit-height {
-    height: inherit;
-  }
+
+/* CSS for vertical menu */
+
+.vertical-menu {
+  width: 20%;
+  float: left;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+h3{
+  margin-bottom: 0em !important;
+}
+
+
