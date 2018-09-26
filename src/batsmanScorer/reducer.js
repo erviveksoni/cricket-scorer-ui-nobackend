@@ -1,6 +1,8 @@
+import actionNames from '../store/actionConstants';
+
 const initialState = {
   strikerBatsmanId: 1,
-  nonstrikerBatsmanId: 1,
+  nonstrikerBatsmanId: 2,
   battingTeamPlayers: [
     {
       name: 'Sachin',
@@ -25,7 +27,7 @@ const initialState = {
 
 const batsManScorerReducer = function batsManScorerReducer(state = initialState, action) {
   switch (action.type) {
-    case 'RECORD_BATSMAN_SCORE': {
+    case actionNames.NextBallActionName: {
       const cloneState = Object.assign({}, state);
 
       const currentBatsman = cloneState.battingTeamPlayers

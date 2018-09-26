@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
-import { getRecordBatsmanScoreAction } from '../store/actions';
+import { getNextBallAction } from '../store/actions';
 import './scorer.css';
 
 
@@ -21,7 +21,14 @@ class Scorer extends Component {
 
   nextball() {
     if (this.state.activeRunButton !== null) {
-      const run = this.state.activeRunButton.replace('runbtn-', '');
+      let run = this.state.activeRunButton.replace('runbtn-', '');
+      run = parseInt(run, 0);
+
+      const lastbowl = {};
+      lastbowl.runs = run;
+      lastbowl.wicket = false;
+      lastbowl.extras = null;
+
       this.props.performaction(run);
     }
   }
@@ -66,8 +73,8 @@ Scorer.propTypes = {
 const mapStatetoProps = () => null;
 
 const mapDispatcherAsProps = dispatch => ({
-  performaction: (runs) => {
-    dispatch(getRecordBatsmanScoreAction(parseInt(runs, 0)));
+  performaction: (lastbowl) => {
+    dispatch(getNextBallAction(lastbowl));
   },
 });
 

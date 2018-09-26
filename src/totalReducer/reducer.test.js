@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import reducer from './reducer';
+import actionNames from '../store/actionConstants';
 
 const constState = {
   bowlingTeam: 'Team2',
@@ -18,8 +19,8 @@ const constState = {
   },
 };
 
-describe('gameInformation/reducer', () => {
-  it('initalstatetest', () => {
+describe('totalReducer/reducer', () => {
+  it('returnDefaultStateTest', () => {
     const initialState = cloneDeep(constState);
 
     expect(reducer(undefined, {})).toEqual(initialState);
@@ -27,7 +28,7 @@ describe('gameInformation/reducer', () => {
 });
 
 
-describe('gameInformation/reducer', () => {
+describe('totalReducer/reducer', () => {
   it('shouldAdd4RunsToTotalScore', () => {
     const initialState = cloneDeep(constState);
 
@@ -35,18 +36,19 @@ describe('gameInformation/reducer', () => {
     expectedState.currentInningScore.runsScored += 4;
     expectedState.currentInningScore.oversBowled += 0;
     expectedState.currentInningScore.wicketsFallen += 0;
+
     const getaction = {
-      type: 'UPDATE_CURRENT_INNING_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 4,
       incrementBalls: false,
-      incrementWicket: false,
+      wicket: false,
     };
 
     expect(reducer(initialState, getaction)).toEqual(expectedState);
   });
 });
 
-describe('gameInformation/reducer', () => {
+describe('totalReducer/reducer', () => {
   it('shouldAdd4Runs1WicketToTotalScore', () => {
     const initialState = cloneDeep(constState);
 
@@ -55,17 +57,17 @@ describe('gameInformation/reducer', () => {
     expectedState.currentInningScore.oversBowled += 0;
     expectedState.currentInningScore.wicketsFallen += 1;
     const getaction = {
-      type: 'UPDATE_CURRENT_INNING_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 4,
       incrementBalls: false,
-      incrementWicket: true,
+      wicket: true,
     };
 
     expect(reducer(initialState, getaction)).toEqual(expectedState);
   });
 });
 
-describe('gameInformation/reducer', () => {
+describe('totalReducer/reducer', () => {
   it('shouldAdd6Runs1Ball1WicketToTotalScore', () => {
     const initialState = cloneDeep(constState);
 
@@ -76,10 +78,10 @@ describe('gameInformation/reducer', () => {
     expectedState.currentBowlsBowled += 1;
 
     const getaction = {
-      type: 'UPDATE_CURRENT_INNING_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 4,
       incrementBalls: true,
-      incrementWicket: true,
+      wicket: true,
     };
 
     expect(reducer(initialState, getaction)).toEqual(expectedState);
@@ -87,7 +89,7 @@ describe('gameInformation/reducer', () => {
 });
 
 
-describe('gameInformation/reducer', () => {
+describe('totalReducer/reducer', () => {
   it('shouldAdd6Runs1Over1WicketToTotalScore', () => {
     const initialState = cloneDeep(constState);
     initialState.currentBowlsBowled += 5;
@@ -99,10 +101,10 @@ describe('gameInformation/reducer', () => {
     expectedState.currentBowlsBowled += 0;
 
     const getaction = {
-      type: 'UPDATE_CURRENT_INNING_SCORE',
+      type: actionNames.NextBallActionName,
       runs: 4,
       incrementBalls: true,
-      incrementWicket: true,
+      wicket: true,
     };
 
     expect(reducer(initialState, getaction)).toEqual(expectedState);

@@ -1,24 +1,14 @@
 
-const getRecordBatsmanScoreAction =
-  function getRecordBatsmanScoreAction(runs) {
+import actionNames from '../store/actionConstants';
+
+const getNextBallAction =
+  function getNextBallAction(lastbowl) {
     const getaction = {
-      type: 'RECORD_BATSMAN_SCORE',
-      runs,
+      type: actionNames.NextBallActionName,
+      lastbowl,
     };
 
     return getaction;
   };
 
-const getTotalScoreUpdateAction =
-  function getTotalScoreUpdateAction(runs, incrementBalls, incrementWicket) {
-    const getaction = {
-      type: 'UPDATE_CURRENT_INNING_SCORE',
-      runs,
-      incrementBalls,
-      incrementWicket,
-    };
-
-    return getaction;
-  };
-
-export { getRecordBatsmanScoreAction, getTotalScoreUpdateAction };
+export default getNextBallAction;
