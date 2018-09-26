@@ -14,9 +14,17 @@ const BowlingScoreCard = (props) => {
     return (<span className="bst-no-select">{row.name}</span>);
   }
 
+  function overRenderer(row) {
+    if (row.totalOversBowled === 0 && row.currentOverBalls === 0) {
+      return (<span className="bst-no-select">{row.totalOversBowled}</span>);
+    }
+
+    return (<span className="bst-no-select">{row.totalOversBowled}.{row.currentOverBalls}</span>);
+  }
+
   const columns = [
     { name: 'name', display: 'Bowler', renderer: mRenderer },
-    { name: 'totalOversBowled', display: 'Overs' },
+    { name: 'totalOversBowled', display: 'Overs', renderer: overRenderer },
     { name: 'madins', display: 'Maiden' },
     { name: 'runs', display: 'Run' },
     { name: 'wickets', display: 'Wickets' },
