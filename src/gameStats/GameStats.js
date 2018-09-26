@@ -2,10 +2,10 @@ import React from 'react';
 import Container from 'reactstrap/lib/Container';
 import CurrentScoreHeading from '../scoreHeader/CurrentScoreHeading';
 
-const GameDetails = () => (
+const GameStats = () => (
   <Container>
     <CurrentScoreHeading />
   </Container>
 );
 
-export default GameDetails;
+export default GameStats;

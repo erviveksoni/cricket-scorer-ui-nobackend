@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, HashRouter, NavLink } from 'react-router-dom';
-import GameDetails from '../gameDetails/GameDetails';
+import GameStats from '../gameStats/GameStats';
 import Home from '../home/Home';
 import './routes.css';
 
 export const Routes = {
   HOME: '/',
   SCORER: '/scorer',
-  GAME_DETAILS: '/gameDetails',
+  GAME_STATS: '/gameStats',
   NEW_GAME: '/newGame',
 };
 
@@ -17,10 +17,10 @@ const AppRouter = () =>
       <div className="inherit-height">
         <ul className="header">
           <li><NavLink exact to={Routes.HOME}>Game Scorer</NavLink></li>
-          <li><NavLink to={Routes.GAME_DETAILS}>Game Details</NavLink></li>
+          <li><NavLink to={Routes.GAME_STATS}>Game Stats</NavLink></li>
         </ul>
         <Route exact path={Routes.HOME} component={Home} />
-        <Route path={Routes.GAME_DETAILS} component={GameDetails} />
+        <Route path={Routes.GAME_STATS} component={GameStats} />
       </div>
     </HashRouter>
   );
