@@ -4,10 +4,8 @@ const initialState = {
       name: 'Wasim',
       id: 1,
       runs: 0,
-      overs: {
-        overs: 0,
-        balls: 0,
-      },
+      totalOversBowled: 0,
+      currentOverBalls: 0,
       extras: 0,
       madins: 0,
       wickets: 0,
@@ -16,10 +14,8 @@ const initialState = {
       name: 'Shoeb',
       id: 2,
       runs: 0,
-      overs: {
-        overs: 0,
-        balls: 0,
-      },
+      totalOversBowled: 0,
+      currentOverBalls: 0,
       extras: 0,
       madins: 0,
       wickets: 0,
@@ -62,7 +58,7 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
             if (action.ball.incrementBalls) {
-              newItem.overs.balls += 1;
+              newItem.currentOverBalls += 1;
             }
           }
           return newItem;
