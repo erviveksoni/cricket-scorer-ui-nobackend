@@ -1,0 +1,22 @@
+.strikeOuter{
+    text-align: center;
+    align-items: center;
+    margin: 0 auto
+}
+
+.strikeActive{
+    padding: 1px;
+    background-color: rgba(0, 102, 255, 0.94) !important;
+    border: 1px solid black;
+    width: 50%;
+    color: white;
+}
+
+.nonstrike{
+    padding: 1px;
+    border: 1px solid black;
+}
+
+.strikewrapper{
+    margin-bottom: 15px;
+}

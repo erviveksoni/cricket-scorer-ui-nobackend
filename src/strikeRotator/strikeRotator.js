@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Row from 'reactstrap/lib/Row';
+import Col from 'reactstrap/lib/Col';
+import '../strikeRotator/strikeRotator.css';
 
 const StrikeRotator = (props) => {
   const currentBatsmanPair = props.battingTeamPlayers
@@ -8,12 +11,12 @@ const StrikeRotator = (props) => {
       item.id === props.nonstrikerBatsmanId);
 
   return (
-    <div>
+    <div className="strikewrapper">
       <h6><b>This Ball</b></h6>
-      <div>
-        <span>{currentBatsmanPair[0].name}</span>&nbsp;&nbsp;
-        <span>{currentBatsmanPair[1].name}</span>
-      </div>
+      <Row className="strikeOuter w-75">
+        <Col md="6" className={currentBatsmanPair[0].id === props.strikerBatsmanId ? 'strikeActive' : 'nonstrike'}>{currentBatsmanPair[0].name}</Col>
+        <Col md="6" className={currentBatsmanPair[1].id === props.strikerBatsmanId ? 'strikeActive' : 'nonstrike'}>{currentBatsmanPair[1].name}</Col>
+      </Row>
     </div>);
 };
 
