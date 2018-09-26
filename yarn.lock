@@ -5857,6 +5857,10 @@ react@^16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+reactjs-bootstrap-table@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/reactjs-bootstrap-table/-/reactjs-bootstrap-table-1.0.12.tgz#0f75f58cc9f4a779c8d0ed76758a8b929b086241"
+
 reactstrap@^6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-6.4.0.tgz#891252a284710180cd3d746dd236ee61d28a1c66"
