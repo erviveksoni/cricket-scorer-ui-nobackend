@@ -77,44 +77,45 @@ describe('BowlerScorer/reducer', () => {
     };
     expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
   });
-  // it('1-LB should add 1 to extras and 1 to runs and increase the ball of bowler-1 ', () => {
-  //   const nextBallAction = {
-  //     type: 'NEXT_BALL',
-  //     currentBowlerId: 1,
-  //     ball: {
-  //       byBat: 1,
-  //       extra: 'LB',
-  //       wicket: false
-  //     }
-  //   };
-  //   const expectedOutputState = {
-  //     bowlingTeamPlayers: [
-  //       {
-  //         name: 'Wasim',
-  //         id: 1,
-  //         runs: 3,
-  //         overs: {
-  //           overs: 0,
-  //           balls: 0,
-  //         },
-  //         extras: 3,
-  //         madins: 0,
-  //         wickets: 0,
-  //       },
-  //       {
-  //         name: 'Shoeb',
-  //         id: 2,
-  //         runs: 0,
-  //         extras: 0,
-  //         overs: {
-  //           overs: 0,
-  //           balls: 0,
-  //         },
-  //         madins: 0,
-  //         wickets: 0,
-  //       },
-  //     ],
-  //   };
-  //   expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
-  // });
+  it('1-LB should add 1 to extras and 1 to runs and increase the ball of bowler-1 ', () => {
+    const nextBallAction = {
+      type: 'NEXT_BALL',
+      currentBowlerId: 1,
+      ball: {
+        runs: 1,
+        extra: 'LB',
+        wicket: false,
+        incrementBalls: true,
+      },
+    };
+    const expectedOutputState = {
+      bowlingTeamPlayers: [
+        {
+          name: 'Wasim',
+          id: 1,
+          runs: 1,
+          overs: {
+            overs: 0,
+            balls: 1,
+          },
+          extras: 1,
+          madins: 0,
+          wickets: 0,
+        },
+        {
+          name: 'Shoeb',
+          id: 2,
+          runs: 0,
+          extras: 0,
+          overs: {
+            overs: 0,
+            balls: 0,
+          },
+          madins: 0,
+          wickets: 0,
+        },
+      ],
+    };
+    expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
+  });
 });
