@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import actionNames from '../store/actionConstants';
 
 const initialState = {
@@ -20,7 +21,7 @@ const initialState = {
 const totalScorerReducer = function totalScorerReducer(state = initialState, action) {
   switch (action.type) {
     case actionNames.NextBallActionName: {
-      const cloneState = Object.assign({}, state);
+      const cloneState = cloneDeep(state);
 
       cloneState.currentInningScore.runsScored += action.lastbowl.runs;
 
