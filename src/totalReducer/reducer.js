@@ -29,7 +29,7 @@ const totalScorerReducer = function totalScorerReducer(state = initialState, act
         cloneState.currentInningScore.wicketsFallen += 1;
       }
 
-      if (action.lastbowl.incrementBalls) {
+      if (action.lastbowl.incrementBall) {
         cloneState.currentBowlsBowled += 1;
       }
 

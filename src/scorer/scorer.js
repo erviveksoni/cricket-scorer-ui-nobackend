@@ -26,6 +26,7 @@ class Scorer extends Component {
       const lastbowl = {};
       lastbowl.runs = run;
       lastbowl.wicket = false;
+      lastbowl.incrementBall = true;
       lastbowl.extras = null;
 
       this.props.performaction(lastbowl);

@@ -41,6 +41,7 @@ describe('totalReducer/reducer', () => {
     lastbowl.runs = 4;
     lastbowl.wicket = false;
     lastbowl.extras = null;
+    lastbowl.incrementBall = false;
 
     const getaction = {
       type: actionNames.NextBallActionName,
@@ -64,6 +65,7 @@ describe('totalReducer/reducer', () => {
     lastbowl.runs = 4;
     lastbowl.wicket = true;
     lastbowl.extras = null;
+    lastbowl.incrementBall = false;
 
     const getaction = {
       type: actionNames.NextBallActionName,
@@ -82,19 +84,13 @@ describe('totalReducer/reducer', () => {
     expectedState.currentInningScore.runsScored += 4;
     expectedState.currentInningScore.wicketsFallen += 1;
     expectedState.currentInningScore.oversBowled += 0;
-    expectedState.currentBowlsBowled += 0;
-
-    // const getaction = {
-    //   type: actionNames.NextBallActionName,
-    //   runs: 4,
-    //   incrementBalls: true,
-    //   wicket: true,
-    // };
+    expectedState.currentBowlsBowled += 1;
 
     const lastbowl = {};
     lastbowl.runs = 4;
     lastbowl.wicket = true;
     lastbowl.extras = null;
+    lastbowl.incrementBall = true;
 
     const getaction = {
       type: actionNames.NextBallActionName,
@@ -109,25 +105,19 @@ describe('totalReducer/reducer', () => {
 describe('totalReducer/reducer', () => {
   it('shouldAdd6Runs1Over1WicketToTotalScore', () => {
     const initialState = cloneDeep(constState);
-    initialState.currentBowlsBowled += 0;
+    initialState.currentBowlsBowled += 5;
 
     const expectedState = cloneDeep(constState);
     expectedState.currentInningScore.runsScored += 4;
     expectedState.currentInningScore.wicketsFallen += 1;
-    expectedState.currentInningScore.oversBowled += 0;
+    expectedState.currentInningScore.oversBowled += 1;
     expectedState.currentBowlsBowled += 0;
-
-    // const getaction = {
-    //   type: actionNames.NextBallActionName,
-    //   runs: 4,
-    //   incrementBalls: true,
-    //   wicket: true,
-    // };
 
     const lastbowl = {};
     lastbowl.runs = 4;
     lastbowl.wicket = true;
     lastbowl.extras = null;
+    lastbowl.incrementBall = true;
 
     const getaction = {
       type: actionNames.NextBallActionName,
