@@ -11,13 +11,15 @@
     },
     "validBallsInCurrentOver": 0,
     "currentOver": [
-        "1",
-        "w",
-        "6-nb",
-        "d",
-        "2-b",
-        "1-lb"
-    ],
+        { "runs": 1, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 1, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 0, "extra": null, "wicket": true, "incrementBall": true },
+        { "runs": 6, "extra": "NB", "wicket": false, "incrementBall": false },
+        { "runs": 0, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 2, "extra": "WD", "wicket": false, "incrementBall": false },
+        { "runs": 1, "extra": "B", "wicket": false, "incrementBall": true }
+      ],
+    "noOfValidBallsInCurrentOver": 5,
     "totalOvers": 10,
     "currentBowlsBowled": 3,
     "currentBowlerId": 1,

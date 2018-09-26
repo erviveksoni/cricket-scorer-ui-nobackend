@@ -1,3 +1,5 @@
+import actionNames from '../store/actionConstants';
+
 const initialState = {
   bowlingTeamPlayers: [
     {
@@ -22,21 +24,36 @@ const initialState = {
     },
   ],
 };
-const extras = {
-  NB: 1,
-  WD: 1,
-  LB: 0,
-  B: 0,
-};
+
 
 const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, action) {
+  const getExtraRun = function getExtraRun(extra) {
+    switch (extra) {
+      case 'B': {
+        return 0;
+      }
+      case 'LB': {
+        return 0;
+      }
+      case 'WD': {
+        return 1;
+      }
+      case 'NB': {
+        return 1;
+      }
+      default: {
+        return 0;
+      }
+    }
+  };
+
   const evalBall = function evalBall(ball) {
     const runs = {
       total: 0,
       extra: 0,
     };
     if (ball.extra) {
-      runs.extra = extras[ball.extra];
+      runs.extra = getExtraRun(ball.extra);
     }
     if (runs.extra > 0) {
       runs.extra += ball.runs;
@@ -48,7 +65,7 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
     return runs;
   };
   switch (action.type) {
-    case 'NEXT_BALL': {
+    case actionNames.NextBallActionName: {
       const newState = Object.assign({}, state);
       newState.bowlingTeamPlayers = state.bowlingTeamPlayers
         .map((item) => {
@@ -57,8 +74,12 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
             const runs = evalBall(action.ball);
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
-            if (action.ball.incrementBalls) {
+            if (action.ball.incrementBall) {
               newItem.currentOverBalls += 1;
+              if (newItem.currentOverBalls === 6) {
+                newItem.totalOversBowled += 1;
+                newItem.currentOverBalls = 0;
+              }
             }
           }
           return newItem;

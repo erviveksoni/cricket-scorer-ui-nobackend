@@ -53,13 +53,14 @@
         "secondInning": {}
     },
     "currentOver": [
-        "1",
-        "w",
-        "6-N",
-        "d",
-        "2-b",
-        "1-lb"
-    ],
+        { "runs": 1, "extra": null, "wicket": false },
+        { "runs": 1, "extra": null, "wicket": false },
+        { "runs": 0, "extra": null, "wicket": true },
+        { "runs": 6, "extra": "NB", "wicket": false },
+        { "runs": 0, "extra": null, "wicket": false },
+        { "runs": 2, "extra": "WD", "wicket": false },
+        { "runs": 1, "extra": "B", "wicket": false }
+      ],
     "strikerBatsmanId": 1,
     "nonstrikerBatsmanId": 1,
     "currentBowlerId": 1,
