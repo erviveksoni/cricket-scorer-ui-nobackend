@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BootstrapTable from 'reactjs-bootstrap-table';
+import '../scoreCards/scoreCard.css';
 
 const BattingScoreCard = (props) => {
   const displayHeaders = true;
