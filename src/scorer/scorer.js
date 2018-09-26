@@ -22,13 +22,17 @@ class Scorer extends Component {
     if (this.state.activeRunButton !== null) {
       let run = this.state.activeRunButton.replace('runbtn-', '');
       run = parseInt(run, 0);
+      const incrementball = true;
+
+      const isOverComplete = (incrementball && this.props.noOfValidBallsInCurrentOver === 5);
+
       const lastbowl = {
         runs: run,
         wicket: false,
-        incrementBall: true,
+        incrementBall: incrementball,
         extras: null,
       };
-      this.props.performaction(lastbowl, this.props.currentBowlerId);
+      this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
       this.setState({ activeRunButton: null });
     }
   }
@@ -69,16 +73,18 @@ class Scorer extends Component {
 Scorer.propTypes = {
   performaction: PropTypes.func.isRequired,
   currentBowlerId: PropTypes.number.isRequired,
+  noOfValidBallsInCurrentOver: PropTypes.number.isRequired,
 };
 
 const mapStateAsProps = state => (
   {
     currentBowlerId: state.thisOver.currentBowlerId,
+    noOfValidBallsInCurrentOver: state.thisOver.noOfValidBallsInCurrentOver,
   });
 
 const mapDispatcherAsProps = dispatch => ({
-  performaction: (lastbowl, currentBowlerId) => {
-    dispatch(getNextBallAction(lastbowl, currentBowlerId));
+  performaction: (lastbowl, currentBowlerId, isOverComplete) => {
+    dispatch(getNextBallAction(lastbowl, currentBowlerId, isOverComplete));
   },
 });
 

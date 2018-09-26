@@ -102,6 +102,172 @@ describe('batsmanScorer/reducer', () => {
 
     initialState.battingTeamPlayers[0].ballsplayed += 1;
     initialState.battingTeamPlayers[0].runs += 1;
+    initialState.strikerBatsmanId = 2;
+    initialState.nonstrikerBatsmanId = 1;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundSwitchPlayersIfOneRunAndOverNotComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 1;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: false,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 1;
+    initialState.strikerBatsmanId = 2;
+    initialState.nonstrikerBatsmanId = 1;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundNotSwitchPlayersIfTwoRunAndOverNotComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 2;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: false,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 2;
+    initialState.strikerBatsmanId = 1;
+    initialState.nonstrikerBatsmanId = 2;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundNotSwitchPlayersIfFourRunAndOverNotComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 4;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: false,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 4;
+    initialState.battingTeamPlayers[0].fours += 1;
+    initialState.strikerBatsmanId = 1;
+    initialState.nonstrikerBatsmanId = 2;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundSwitchPlayersIfOneRunAndOverComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 1;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: true,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 1;
+    initialState.strikerBatsmanId = 1;
+    initialState.nonstrikerBatsmanId = 2;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundSwitchPlayersIfTwoRunsAndOverComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 2;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: true,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 2;
+    initialState.strikerBatsmanId = 2;
+    initialState.nonstrikerBatsmanId = 1;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
+describe('batsmanScorer/reducer', () => {
+  it('shoundSwitchPlayersIfFourRunAndOverComplete', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 4;
+    lastbowl.wicket = false;
+    lastbowl.extras = null;
+    lastbowl.incrementBall = true;
+
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+      isOverComplete: true,
+    };
+
+    initialState.battingTeamPlayers[0].ballsplayed += 1;
+    initialState.battingTeamPlayers[0].runs += 4;
+    initialState.battingTeamPlayers[0].fours += 1;
+    initialState.strikerBatsmanId = 2;
+    initialState.nonstrikerBatsmanId = 1;
 
     expect(reducer(inputState, getaction)).toEqual(initialState);
   });
