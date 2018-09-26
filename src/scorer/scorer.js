@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
-import getRecordBatsmanScoreAction from '../store/actions';
+import { getRecordBatsmanScoreAction } from '../store/actions';
 import './scorer.css';
 
 
@@ -21,7 +21,8 @@ class Scorer extends Component {
 
   nextball() {
     if (this.state.activeRunButton !== null) {
-      this.props.performaction(1);
+      const run = this.state.activeRunButton.replace('runbtn-', '');
+      this.props.performaction(run);
     }
   }
 
@@ -32,11 +33,17 @@ class Scorer extends Component {
           <Col className="text-center">
             <div>
               <button className={this.state.activeRunButton === 'runbtn-0' ? 'runbtn active' : 'runbtn'} value="0" onClick={() => this.setState({ activeRunButton: 'runbtn-0' })}>0</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-1' ? 'runbtn active' : 'runbtn'} value="1" onClick={() => this.setState({ activeRunButton: 'runbtn-1' })}>1</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-2' ? 'runbtn active' : 'runbtn'} value="2" onClick={() => this.setState({ activeRunButton: 'runbtn-2' })}>2</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-3' ? 'runbtn active' : 'runbtn'} value="3" onClick={() => this.setState({ activeRunButton: 'runbtn-3' })}>3</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-4' ? 'runbtn active' : 'runbtn'} value="4" onClick={() => this.setState({ activeRunButton: 'runbtn-4' })}>4</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-5' ? 'runbtn active' : 'runbtn'} value="5" onClick={() => this.setState({ activeRunButton: 'runbtn-5' })}>5</button>
+              &nbsp;
               <button className={this.state.activeRunButton === 'runbtn-6' ? 'runbtn active' : 'runbtn'} value="6" onClick={() => this.setState({ activeRunButton: 'runbtn-6' })}>6</button>
             </div>
           </Col>
@@ -44,7 +51,7 @@ class Scorer extends Component {
         <Row>
           <Col>
             <div>
-              <button className="submitbtn" onClick={this.nextball}>Next Ball </button>
+              <button className="submitbtn" onClick={this.nextball}>Next Ball</button>
             </div>
           </Col>
         </Row>
@@ -53,16 +60,14 @@ class Scorer extends Component {
 }
 
 Scorer.propTypes = {
-  performaction: PropTypes.number.isRequired,
+  performaction: PropTypes.func.isRequired,
 };
 
-const mapStatetoProps = () => ({
-
-});
+const mapStatetoProps = () => null;
 
 const mapDispatcherAsProps = dispatch => ({
   performaction: (runs) => {
-    dispatch(getRecordBatsmanScoreAction(runs));
+    dispatch(getRecordBatsmanScoreAction(parseInt(runs, 0)));
   },
 });
 
