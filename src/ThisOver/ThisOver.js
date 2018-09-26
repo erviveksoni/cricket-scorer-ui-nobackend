@@ -17,20 +17,22 @@ class ThisOver extends Component {
       return '';
     };
 
-    const overData = this.props.currentOver.map(item => {
-      const extraStr = item.extra ? '-'+item.extra : '';
+    const overData = this.props.currentOver.map((item) => {
+      const extraStr = item.extra ? `-${item.extra}` : '';
       return <span>{item.byBat + extraStr},&nbsp;</span>;
     });
     return (
-      <div>
-        <Row className="h-100">
-          <Col className="text-center">
-            <Row className="h-100"><span>This Over</span></Row>
-            <Row className="h-100"><span>Bowler: </span><span>{getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span></Row>
+      <div className="home-component">
+        <Row>
+          <Col>
+            <Row ><span>This Over</span></Row>
+            <Row >
+              <span>Bowler: </span>
+              <span>{getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span>
+            </Row>
           </Col>
-          
-          <Col className="text-center">
-            <Row className="h-100">
+          <Col >
+            <Row >
               {overData}
             </Row>
           </Col>

@@ -9,7 +9,7 @@ import { createGameAction } from './actions';
 
 const Home = () =>
   (
-    <Container className="h-100">
+    <Container className="h-100 w-75 wrapper">
       <CurrentScoreHeading />
       <ThisOver />
       <Scorer />

@@ -30,40 +30,39 @@ const extras = {
   NB: 1,
   WD: 1,
   LB: 0,
-  B: 0
-}
+  B: 0,
+};
 
 const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, action) {
-  const evalBall = function (ball) {
-    
-    let runs = {
-      total : 0,
-      extra : 0
-    }
-    if(ball.extra) {
+  const evalBall = function evalBall(ball) {
+    const runs = {
+      total: 0,
+      extra: 0,
+    };
+    if (ball.extra) {
       runs.extra = extras[ball.extra];
     }
-    if(runs.extra > 0) {
-      runs.extra += ball.byBat;
+    if (runs.extra > 0) {
+      runs.extra += ball.runs;
       runs.total = runs.extra;
     } else {
-      runs.total += ball.byBat;
+      runs.total += ball.runs;
     }
-    console.log('evallball'+runs);
     return runs;
-  }
+  };
   switch (action.type) {
     case 'NEXT_BALL': {
-      let newState = Object.assign({}, state);
-      const currentBowlerId = action.currentBowlerId;
+      const newState = Object.assign({}, state);
+      const { currentBowlerId } = action.currentBowlerId;
       newState.bowlingTeamPlayers = state.bowlingTeamPlayers
-        .map(item => {
-          if (currentBowlerId === item.id) {
+        .map((item) => {
+          const newItem = Object.assign({}, item);
+          if (currentBowlerId === newItem.id) {
             const runs = evalBall(action.ball);
-            item.extras += runs.extra;
-            item.runs += runs.total;
+            newItem.extras += runs.extra;
+            newItem.runs += runs.total;
           }
-          return item;
+          return newItem;
         });
       return newState;
     }

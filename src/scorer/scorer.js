@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import { getRecordBatsmanScoreAction } from '../store/actions';
@@ -28,7 +27,7 @@ class Scorer extends Component {
 
   render() {
     return (
-      <Container className="h-100" >
+      <div className="home-component">
         <Row>
           <Col className="text-center">
             <div>
@@ -55,7 +54,7 @@ class Scorer extends Component {
             </div>
           </Col>
         </Row>
-      </Container >);
+      </div >);
   }
 }
 
