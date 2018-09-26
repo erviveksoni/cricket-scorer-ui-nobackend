@@ -46,6 +46,7 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
       runs.extra += ball.runs;
       runs.total = runs.extra;
     } else {
+      runs.extra = ball.runs;
       runs.total += ball.runs;
     }
     return runs;
@@ -60,6 +61,9 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
             const runs = evalBall(action.ball);
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
+            if (action.ball.incrementBalls) {
+              newItem.overs.balls += 1;
+            }
           }
           return newItem;
         });
