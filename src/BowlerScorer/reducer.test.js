@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import reducer from './reducer';
+import actionNames from '../store/actionConstants';
 
 const expectedInitialState = {
   bowlingTeamPlayers: [
@@ -39,7 +40,7 @@ describe('BowlerScorer/reducer', () => {
 
   it('1-NB should add 2 to extras and 2 to runs of bowler-1 ', () => {
     const nextBallAction = {
-      type: 'NEXT_BALL',
+      type: actionNames.NextBallActionName,
       currentBowlerId: 1,
       ball: {
         runs: 1,
