@@ -12,18 +12,7 @@ const BowlingScoreCard = props =>
         <Col >
           <Row>
             <Col md="5" xs="4">
-              <b>{props.battingTeam}</b>
-            </Col>
-            <Col sm="1" xs="2" />
-            <Col className="text-align-right">
-              <p>
-                <b>
-                  {props.currentInningScore.runsScored}/
-                  {props.currentInningScore.wicketsFallen} in&nbsp;
-                  {props.currentInningScore.oversBowled}.
-                  {props.currentBowlsBowled}/{props.totalOvers}
-                </b>
-              </p>
+              <b>Test</b>
             </Col>
           </Row>
         </Col>
@@ -32,40 +21,24 @@ const BowlingScoreCard = props =>
       <Row>
         <Col >
           <Row>
-            <Col md="5" xs="4">
-              {props.bowlingTeam}
-            </Col>
-
+            <Col md="5" xs="4" />
+            {props.bowlingTeamPlayers}
             <Col sm="1" xs="2" />
             <Col className="text-align-right">
-              <p>
-                {props.previousInningScore.runsScored}/
-                {props.previousInningScore.wicketsFallen} in&nbsp;
-                {props.previousInningScore.oversBowled}
-              </p>
+          Test
             </Col>
           </Row>
         </Col>
       </Row>
-    </div>
-  );
+    </div>);
 
-CurrentScoreHandling.propTypes = {
-  previousInningScore: PropTypes.instanceOf(Object).isRequired,
-  currentInningScore: PropTypes.instanceOf(Object).isRequired,
-  currentBowlsBowled: PropTypes.number.isRequired,
-  totalOvers: PropTypes.number.isRequired,
-  battingTeam: PropTypes.string.isRequired,
-  bowlingTeam: PropTypes.string.isRequired,
+BowlingScoreCard.propTypes = {
+  bowlingTeamPlayers: PropTypes.instanceOf(Object).isRequired,
 };
 
+
 const mapStateToProps = state => ({
-  previousInningScore: state.totalScorerReducer.previousInningScore,
-  currentInningScore: state.totalScorerReducer.currentInningScore,
-  currentBowlsBowled: state.totalScorerReducer.currentBowlsBowled,
-  totalOvers: state.totalScorerReducer.totalOvers,
-  battingTeam: state.totalScorerReducer.battingTeam,
-  bowlingTeam: state.totalScorerReducer.bowlingTeam,
+  bowlingTeamPlayers: state.bowlerScorerReducer.bowlingTeamPlayers,
 });
 
 export default connect(mapStateToProps)(BowlingScoreCard);
