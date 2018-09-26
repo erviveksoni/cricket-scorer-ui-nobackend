@@ -11,11 +11,11 @@ const CurrentScoreHandling = props =>
       <Row>
         <Col >
           <Row>
-            <Col md="5" xs="4">
+            <Col md="4" xs="4">
               <b>{props.battingTeam}</b>
             </Col>
-            <Col sm="1" xs="2" />
-            <Col className="text-align-right">
+            <Col sm="3" xs="4" />
+            <Col className="text-align-right" md="4" xs="3">
               <p>
                 <b>
                   {props.currentInningScore.runsScored}/
@@ -32,12 +32,12 @@ const CurrentScoreHandling = props =>
       <Row>
         <Col >
           <Row>
-            <Col md="5" xs="4">
+            <Col md="4" xs="4">
               {props.bowlingTeam}
             </Col>
 
-            <Col sm="1" xs="2" />
-            <Col className="text-align-right">
+            <Col sm="3" xs="4" />
+            <Col className="text-align-right" md="4" xs="3">
               <p>
                 {props.previousInningScore.runsScored}/
                 {props.previousInningScore.wicketsFallen} in&nbsp;

@@ -7,10 +7,8 @@ const initialState = {
       name: 'Wasim',
       id: 1,
       runs: 0,
-      overs: {
-        overs: 0,
-        balls: 0,
-      },
+      totalOversBowled: 0,
+      currentOverBalls: 0,
       extras: 0,
       madins: 0,
       wickets: 0,
@@ -19,10 +17,8 @@ const initialState = {
       name: 'Shoeb',
       id: 2,
       runs: 0,
-      overs: {
-        overs: 0,
-        balls: 0,
-      },
+      totalOversBowled: 0,
+      currentOverBalls: 0,
       extras: 0,
       madins: 0,
       wickets: 0,
@@ -32,13 +28,33 @@ const initialState = {
 
 
 const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, action) {
+  const getExtraRun = function getExtraRun(extra) {
+    switch (extra) {
+      case 'B': {
+        return 0;
+      }
+      case 'LB': {
+        return 0;
+      }
+      case 'WD': {
+        return 1;
+      }
+      case 'NB': {
+        return 1;
+      }
+      default: {
+        return 0;
+      }
+    }
+  };
+
   const evalBall = function evalBall(ball) {
     const runs = {
       total: 0,
       extra: 0,
     };
     if (ball.extra) {
-      runs.extra = Constants.EXTRAS[ball.extra].runs;
+      runs.extra = getExtraRun(ball.extra);
     }
     if (runs.extra > 0) {
       runs.extra += ball.runs;
@@ -60,10 +76,10 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
             if (action.ball.incrementBalls) {
-              newItem.overs.balls += 1;
-              if (newItem.overs.balls === 6) {
-                newItem.overs.overs += 1;
-                newItem.overs.balls = 0;
+              newItem.currentOverBalls += 1;
+              if (newItem.currentOverBalls === 6) {
+                newItem.totalOversBowled += 1;
+                newItem.currentOverBalls = 0;
               }
             }
           }

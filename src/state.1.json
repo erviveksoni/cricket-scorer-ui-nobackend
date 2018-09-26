@@ -11,13 +11,15 @@
     },
     "validBallsInCurrentOver": 0,
     "currentOver": [
-        "1",
-        "w",
-        "6-nb",
-        "d",
-        "2-b",
-        "1-lb"
-    ],
+        { "runs": 1, "extra": null, "wicket": false, "incrementBalls": true },
+        { "runs": 1, "extra": null, "wicket": false, "incrementBalls": true },
+        { "runs": 0, "extra": null, "wicket": true, "incrementBalls": true },
+        { "runs": 6, "extra": "NB", "wicket": false, "incrementBalls": false },
+        { "runs": 0, "extra": null, "wicket": false, "incrementBalls": true },
+        { "runs": 2, "extra": "WD", "wicket": false, "incrementBalls": false },
+        { "runs": 1, "extra": "B", "wicket": false, "incrementBalls": true }
+      ],
+    "noOfValidBallsInCurrentOver": 5,
     "totalOvers": 10,
     "currentBowlsBowled": 3,
     "currentBowlerId": 1,
@@ -27,7 +29,8 @@
             "name": "Wasim",
             "id": "1",
             "runs": 0,
-            "overs": 0,
+            "totalOversBowled": 0,
+            "currentOverBalls": 0,
             "extras":0,
             "madins": 0,
             "wickets": 0
@@ -36,7 +39,8 @@
             "name": "Shoeb",
             "id": "2",
             "runs": 0,
-            "overs": 0,
+            "totalOversBowled": 0,
+            "currentOverBalls": 0,
             "extras":0,
             "madins": 0,
             "wickets": 0
