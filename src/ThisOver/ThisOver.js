@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
 import './ThisOver.css';
@@ -17,18 +16,26 @@ class ThisOver extends Component {
       }
       return '';
     };
+
+    const overData = this.props.currentOver.map(item => {
+      const extraStr = item.extra ? '-'+item.extra : '';
+      return <span>{item.byBat + extraStr},&nbsp;</span>;
+    });
     return (
-      <Container className="h-100">
-        <Row className="align-items-center h-100">
+      <div>
+        <Row className="h-100">
           <Col className="text-center">
-            <Row className="align-items-center h-100"><span>This Over</span></Row>
-            <Row className="align-items-center h-100"><span>Bowler:</span><span>{getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span></Row>
+            <Row className="h-100"><span>This Over</span></Row>
+            <Row className="h-100"><span>Bowler: </span><span>{getBowlerName(this.props.currentBowlerId, this.props.playersArr)}</span></Row>
           </Col>
+          
           <Col className="text-center">
-            <Row className="align-items-center h-100">{this.props.currentOver}</Row>
+            <Row className="h-100">
+              {overData}
+            </Row>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
