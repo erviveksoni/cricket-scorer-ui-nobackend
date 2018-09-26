@@ -1,0 +1,22 @@
+ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+  ul.header {
+    background-color: #111;
+    padding: 0;
+  }
+  ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+  .active {
+    background-color: #0099FF;
+  }
+  div.inherit-height {
+    height: inherit;
+  }

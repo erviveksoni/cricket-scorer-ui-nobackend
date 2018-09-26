@@ -26,6 +26,33 @@ const constState = {
   ],
 };
 
+describe('gameInformation/reducer', () => {
+  it('initalstatetest', () => {
+    const initialState = cloneDeep(constState);
+
+    expect(reducer(undefined, {})).toEqual(initialState);
+  });
+});
+
+
+describe('gameInformation/reducer', () => {
+  it('shouldIncrementBatsmanScoreOnValidDelivery_4', () => {
+    const initialState = cloneDeep(constState);
+
+    const inputState = cloneDeep(constState);
+
+    const getaction = {
+      type: 'RECORD_BATSMAN_SCORE',
+      runs: 4,
+    };
+
+    initialState.battingTeamPlayers[0].fours += 1;
+    initialState.battingTeamPlayers[0].runs += 4;
+
+    expect(reducer(inputState, getaction)).toEqual(initialState);
+  });
+});
+
 
 describe('gameInformation/reducer', () => {
   it('shouldIncrementBatsmanScoreOnValidDelivery_6', () => {

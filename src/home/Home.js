@@ -1,15 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Container from 'reactstrap/lib/Container';
+import { connect } from 'react-redux';
 import './Home.css';
-import { createGameAction } from './actions';
 import ThisOver from '../ThisOver/ThisOver';
 import Scorer from '../scorer/scorer';
-
+import CurrentScoreHeading from '../scoreHeader/CurrentScoreHeading';
+import { createGameAction } from './actions';
 
 const Home = () =>
   (
     <Container className="h-100">
+      <CurrentScoreHeading />
       <ThisOver />
       <Scorer />
     </Container>
