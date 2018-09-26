@@ -1,17 +1,23 @@
 html, body {
     height: 100%
 }
-
 #root {
     height: 100%
 }
-
 .text-align-right{
-    text-align: 'right'
+    text-align: right
 }
 .home-component {
     margin-bottom : 15px;
 }
 .wrapper {
     border: 1px black solid;
+    margin-left: 12%;
+    /* text-align: right */
+}
+.text-align-center{
+    text-align: center
+}
+.page-width{
+    width:47%;
 }
