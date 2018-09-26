@@ -83,26 +83,24 @@ describe('batsmanScorer/reducer', () => {
   });
 });
 
+
 describe('batsmanScorer/reducer', () => {
-  it('shoundIncrementValidBallsPlayedwithRuns', () => {
-    const initialState = cloneDeep(constState);
+  it('shound Not Increment batesman score if extra', () => {
+    const expectedOutput = cloneDeep(constState);
 
     const inputState = cloneDeep(constState);
 
     const lastbowl = {};
     lastbowl.runs = 1;
     lastbowl.wicket = false;
-    lastbowl.extras = null;
-    lastbowl.incrementBall = true;
+    lastbowl.extras = 'WD';
+    lastbowl.incrementBall = false;
 
     const getaction = {
       type: actionNames.NextBallActionName,
       lastbowl,
     };
 
-    initialState.battingTeamPlayers[0].ballsplayed += 1;
-    initialState.battingTeamPlayers[0].runs += 1;
-
-    expect(reducer(inputState, getaction)).toEqual(initialState);
+    expect(reducer(inputState, getaction)).toEqual(expectedOutput);
   });
 });

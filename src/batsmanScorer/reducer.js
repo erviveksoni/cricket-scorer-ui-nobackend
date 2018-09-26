@@ -34,6 +34,9 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
       const currentBatsman = cloneState.battingTeamPlayers
         .filter(item => item.id === cloneState.strikerBatsmanId);
 
+      if (action.lastbowl.extras) {
+        return cloneState;
+      }
       if (action.lastbowl.incrementBall) {
         currentBatsman[0].ballsplayed += 1;
       }

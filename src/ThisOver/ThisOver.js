@@ -18,7 +18,7 @@ class ThisOver extends Component {
     };
 
     const overData = this.props.currentOver.map((item, indx) => {
-      const extraStr = item.extra ? `-${item.extra}` : '';
+      const extraStr = item.extras ? `-${item.extras}` : '';
       const index = indx;
       return <span key={index}>{item.runs + extraStr}&nbsp;&nbsp;</span>;
     });
