@@ -1,5 +1,4 @@
 import actionNames from '../store/actionConstants';
-import Constants from '../store/Constants';
 
 const initialState = {
   bowlingTeamPlayers: [
@@ -75,7 +74,7 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
             const runs = evalBall(action.ball);
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
-            if (action.ball.incrementBalls) {
+            if (action.ball.incrementBall) {
               newItem.currentOverBalls += 1;
               if (newItem.currentOverBalls === 6) {
                 newItem.totalOversBowled += 1;

@@ -19,7 +19,7 @@ class ThisOver extends Component {
 
     const overData = this.props.currentOver.map((item) => {
       const extraStr = item.extra ? `-${item.extra}` : '';
-      return <span>{item.byBat + extraStr},&nbsp;</span>;
+      return <span>{item.runs + extraStr},&nbsp;</span>;
     });
     return (
       <div className="home-component">
@@ -46,12 +46,14 @@ const mapStateAsProps = state => (
     currentBowlerId: state.thisOver.currentBowlerId,
     playersArr: state.bowlerScorer.bowlingTeamPlayers,
     currentOver: state.thisOver.currentOver,
+    noOfValidBallsInCurrentOver: state.thisOver.noOfValidBallsInCurrentOver,
   });
 
 ThisOver.propTypes = {
   currentBowlerId: PropTypes.number.isRequired,
   playersArr: PropTypes.arrayOf(PropTypes.object).isRequired,
   currentOver: PropTypes.arrayOf(PropTypes.string).isRequired,
+  noOfValidBallsInCurrentOver: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 

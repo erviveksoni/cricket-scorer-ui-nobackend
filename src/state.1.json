@@ -11,13 +11,13 @@
     },
     "validBallsInCurrentOver": 0,
     "currentOver": [
-        { "runs": 1, "extra": null, "wicket": false, "incrementBalls": true },
-        { "runs": 1, "extra": null, "wicket": false, "incrementBalls": true },
-        { "runs": 0, "extra": null, "wicket": true, "incrementBalls": true },
-        { "runs": 6, "extra": "NB", "wicket": false, "incrementBalls": false },
-        { "runs": 0, "extra": null, "wicket": false, "incrementBalls": true },
-        { "runs": 2, "extra": "WD", "wicket": false, "incrementBalls": false },
-        { "runs": 1, "extra": "B", "wicket": false, "incrementBalls": true }
+        { "runs": 1, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 1, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 0, "extra": null, "wicket": true, "incrementBall": true },
+        { "runs": 6, "extra": "NB", "wicket": false, "incrementBall": false },
+        { "runs": 0, "extra": null, "wicket": false, "incrementBall": true },
+        { "runs": 2, "extra": "WD", "wicket": false, "incrementBall": false },
+        { "runs": 1, "extra": "B", "wicket": false, "incrementBall": true }
       ],
     "noOfValidBallsInCurrentOver": 5,
     "totalOvers": 10,

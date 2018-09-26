@@ -9,25 +9,25 @@ describe('ThisOver/reducer', () => {
     const expectedInitialState = {
       currentOver: [
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 0, extra: null, wicket: true, incrementBalls: true,
+          runs: 0, extra: null, wicket: true, incrementBall: true,
         },
         {
-          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBalls: false,
+          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
         },
         {
-          runs: 0, extra: null, wicket: false, incrementBalls: true,
+          runs: 0, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBalls: false,
+          runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBall: false,
         },
         {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBalls: true,
+          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
         },
       ],
       noOfValidBallsInCurrentOver: 5,
@@ -41,19 +41,19 @@ describe('ThisOver/reducer', () => {
     const expectedTest1InputState = {
       currentOver: [
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 0, extra: null, wicket: true, incrementBalls: true,
+          runs: 0, extra: null, wicket: true, incrementBall: true,
         },
         {
-          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBalls: false,
+          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
         },
         {
-          runs: 0, extra: null, wicket: false, incrementBalls: true,
+          runs: 0, extra: null, wicket: false, incrementBall: true,
         },
       ],
       noOfValidBallsInCurrentOver: 4,
@@ -63,33 +63,33 @@ describe('ThisOver/reducer', () => {
     const nextBallAction = {
       type: actionConstants.NextBallActionName,
       currentBowlerId: 1,
-      ball: {
+      lastbowl: {
         runs: 1,
         extra: 'NB',
         wicket: false,
-        incrementBalls: false,
+        incrementBall: false,
       },
     };
 
     const expectedTest1OutputState = {
       currentOver: [
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 0, extra: null, wicket: true, incrementBalls: true,
+          runs: 0, extra: null, wicket: true, incrementBall: true,
         },
         {
-          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBalls: false,
+          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
         },
         {
-          runs: 0, extra: null, wicket: false, incrementBalls: true,
+          runs: 0, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: 'NB', wicket: false, incrementBalls: false,
+          runs: 1, extra: 'NB', wicket: false, incrementBall: false,
         },
       ],
       noOfValidBallsInCurrentOver: 4,
@@ -103,28 +103,28 @@ describe('ThisOver/reducer', () => {
     const expectedTest2InputState = {
       currentOver: [
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 0, extra: null, wicket: true, incrementBalls: true,
+          runs: 0, extra: null, wicket: true, incrementBall: true,
         },
         {
-          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBalls: false,
+          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
         },
         {
-          runs: 0, extra: null, wicket: false, incrementBalls: true,
+          runs: 0, extra: null, wicket: false, incrementBall: true,
         },
         {
-          runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBalls: false,
+          runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBall: false,
         },
         {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBalls: true,
+          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
         },
         {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBalls: true,
+          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
         },
       ],
       noOfValidBallsInCurrentOver: 6,
@@ -133,18 +133,18 @@ describe('ThisOver/reducer', () => {
     const nextBallAction = {
       type: actionConstants.NextBallActionName,
       currentBowlerId: 1,
-      ball: {
+      lastbowl: {
         runs: 1,
         extra: null,
         wicket: false,
-        incrementBalls: true,
+        incrementBall: true,
       },
     };
 
     const expectedTest2OutputState = {
       currentOver: [
         {
-          runs: 1, extra: null, wicket: false, incrementBalls: true,
+          runs: 1, extra: null, wicket: false, incrementBall: true,
         },
       ],
       noOfValidBallsInCurrentOver: 1,

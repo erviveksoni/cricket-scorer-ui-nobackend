@@ -78,7 +78,7 @@ describe('BowlerScorer/reducer', () => {
         runs: 1,
         extra: 'LB',
         wicket: false,
-        incrementBalls: true,
+        incrementBall: true,
       },
     };
     const expectedOutputState = {
