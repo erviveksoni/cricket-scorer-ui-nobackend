@@ -25,7 +25,7 @@ const BowlingScoreCard = (props) => {
   return (
     <div>
       <div>
-        <h5>Bowling Team</h5>
+        <h6><b>Bowling Team</b></h6>
       </div>
       <BootstrapTable
         select="single"
