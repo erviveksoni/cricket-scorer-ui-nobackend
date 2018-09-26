@@ -53,11 +53,10 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
   switch (action.type) {
     case 'NEXT_BALL': {
       const newState = Object.assign({}, state);
-      const { currentBowlerId } = action.currentBowlerId;
       newState.bowlingTeamPlayers = state.bowlingTeamPlayers
         .map((item) => {
           const newItem = Object.assign({}, item);
-          if (currentBowlerId === newItem.id) {
+          if (action.currentBowlerId === newItem.id) {
             const runs = evalBall(action.ball);
             newItem.extras += runs.extra;
             newItem.runs += runs.total;
