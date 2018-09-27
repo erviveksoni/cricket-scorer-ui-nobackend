@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import actionNames from '../store/actionConstants';
+import ballEvaluator from '../utils/BallEvaluator';
 
 const initialState = {
   bowlingTeam: 'Team2',
@@ -23,7 +24,9 @@ const totalScorerReducer = function totalScorerReducer(state = initialState, act
     case actionNames.NextBallActionName: {
       const cloneState = cloneDeep(state);
 
-      cloneState.currentInningScore.runsScored += action.lastbowl.runs;
+      const runs = ballEvaluator.evalBall(action.lastbowl);
+
+      cloneState.currentInningScore.runsScored += runs.total;
 
       if (action.lastbowl.wicket) {
         cloneState.currentInningScore.wicketsFallen += 1;

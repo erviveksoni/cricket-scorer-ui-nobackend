@@ -127,3 +127,44 @@ describe('totalReducer/reducer', () => {
     expect(reducer(initialState, getaction)).toEqual(expectedState);
   });
 });
+
+describe('totalReducer/reducer', () => {
+  it('Dont add extras if LB to Total score of team', () => {
+    const initialState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 1;
+    lastbowl.wicket = false;
+    lastbowl.extras = 'LB';
+    lastbowl.incrementBall = false;
+
+    const expectedState = cloneDeep(constState);
+    expectedState.currentInningScore.runsScored += 1;
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+    };
+
+    expect(reducer(initialState, getaction)).toEqual(expectedState);
+  });
+
+  it('Dont add extras if B to Total score of team', () => {
+    const initialState = cloneDeep(constState);
+
+    const lastbowl = {};
+    lastbowl.runs = 1;
+    lastbowl.wicket = false;
+    lastbowl.extras = 'B';
+    lastbowl.incrementBall = false;
+
+    const expectedState = cloneDeep(constState);
+    expectedState.currentInningScore.runsScored += 1;
+    const getaction = {
+      type: actionNames.NextBallActionName,
+      lastbowl,
+    };
+
+    expect(reducer(initialState, getaction)).toEqual(expectedState);
+  });
+});
+

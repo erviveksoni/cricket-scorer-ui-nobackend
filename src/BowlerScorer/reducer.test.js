@@ -40,7 +40,7 @@ describe('BowlerScorer/reducer', () => {
       currentBowlerId: 1,
       lastbowl: {
         runs: 1,
-        extra: 'NB',
+        extras: 'NB',
         wicket: false,
       },
     };
@@ -76,7 +76,7 @@ describe('BowlerScorer/reducer', () => {
       currentBowlerId: 1,
       lastbowl: {
         runs: 1,
-        extra: 'LB',
+        extras: 'LB',
         wicket: false,
         incrementBall: true,
       },
