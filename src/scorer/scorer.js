@@ -81,13 +81,16 @@ class Scorer extends Component {
 
         const lastbowl = {
           runs: run,
-          wicket: false,
+          wicket: this.state.activeOutButton,
           incrementBall: incrementball,
           extras: extra,
-          isOut: this.state.activeOutButton,
-
         };
-        this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
+        this.props.performaction(
+          lastbowl,
+          this.props.currentBowlerId,
+          isOverComplete,
+          this.props.teams[0],
+        );
         this.setState({ activeRunButton: null, activeExtraButton: null, activeOutButton: false });
         if (isOverComplete) {
           this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam.filter(i => i.id !== lastBowlerId));
@@ -162,8 +165,8 @@ class Scorer extends Component {
 }
 
 Scorer.propTypes = {
-  currentBowlerId: PropTypes.number.isRequired,
   performaction: PropTypes.func.isRequired,
+  currentBowlerId: PropTypes.number.isRequired,
   noOfValidBallsInCurrentOver: PropTypes.number.isRequired,
   oversBowled: PropTypes.number.isRequired,
   totalOvers: PropTypes.number.isRequired,
@@ -186,8 +189,8 @@ const mapStateAsProps = state => (
   });
 
 const mapDispatcherAsProps = dispatch => ({
-  performaction: (lastbowl, currentBowlerId, isOverComplete) => {
-    dispatch(getNextBallAction(lastbowl, currentBowlerId, isOverComplete));
+  performaction: (lastbowl, currentBowlerId, isOverComplete, batsmenList) => {
+    dispatch(getNextBallAction(lastbowl, currentBowlerId, isOverComplete, batsmenList));
   },
   addNewBowlerAction: (bowler) => {
     dispatch(getAddNewBowlerAction(bowler));

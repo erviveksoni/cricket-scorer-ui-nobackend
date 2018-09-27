@@ -42,7 +42,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 0;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -59,7 +59,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 1;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -80,7 +80,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 2;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -99,7 +99,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 3;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -120,7 +120,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 4;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -140,7 +140,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 5;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -161,7 +161,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.runs = 6;
       lastbowl.wicket = false;
       lastbowl.extras = null;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -184,7 +184,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -208,7 +208,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -232,7 +232,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -259,7 +259,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -283,7 +283,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -307,7 +307,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = null;
       lastbowl.incrementBall = true;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -334,7 +334,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'WD';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -355,7 +355,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'B';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -376,7 +376,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'LB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -396,7 +396,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'NB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -419,7 +419,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'WD';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -437,7 +437,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'B';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -455,7 +455,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'LB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -472,7 +472,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'NB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -492,7 +492,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'WD';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -511,7 +511,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'B';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -530,7 +530,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'LB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -548,7 +548,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'NB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -569,7 +569,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'WD';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -591,7 +591,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'B';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -613,7 +613,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'LB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -634,7 +634,7 @@ describe('batsmanScorer/reducer', () => {
       lastbowl.wicket = false;
       lastbowl.extras = 'NB';
       lastbowl.incrementBall = false;
-      lastbowl.isOut = false;
+
 
       const getaction = {
         type: actionNames.NextBallActionName,
@@ -649,28 +649,50 @@ describe('batsmanScorer/reducer', () => {
     });
   });
 
-  describe('testOutWhenNoRunsInSameOverWithNoExtras', () => {
-    // it('ExpectUpdateisOutForBatsmanGettingOut', () => {
-    //   const expectedOutput = cloneDeep(constState);
-    //   const lastbowl = {};
-    //   lastbowl.runs = 6;
-    //   lastbowl.wicket = false;
-    //   lastbowl.extras = 'NB';
-    //   lastbowl.incrementBall = false;
-    //   lastbowl.isOut = true;
+  // describe('testOutWhenNoRunsInSameOverWithNoExtras', () => {
+  //   it('ExpectUpdateisOutForBatsmanGettingOut', () => {
+  //     const expectedOutput = cloneDeep(constState);
+  //     const lastbowl = {};
+  //     lastbowl.runs = 6;
+  //     lastbowl.wicket = true;
+  //     lastbowl.extras = 'NB';
+  //     lastbowl.incrementBall = false;
 
-    //   const getaction = {
-    //     type: actionNames.NextBallActionName,
-    //     lastbowl,
-    //     isOverComplete: true,
-    //   };
+  //     const getaction = {
+  //       type: actionNames.NextBallActionName,
+  //       lastbowl,
+  //       isOverComplete: true,
+  //     };
 
-    //   expectedOutput.battingTeamPlayers[0].isOut = true;
-    //   expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
-    //   expectedOutput.strikerBatsmanId = 3;
-    //   expectedOutput.nonstrikerBatsmanId = 2;
+  //     expectedOutput.battingTeamPlayers[0].isOut = true;
+  //     expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
+  //     expectedOutput.strikerBatsmanId = 3;
+  //     expectedOutput.nonstrikerBatsmanId = 2;
 
-    //   expect(reducer(constState, getaction)).toEqual(expectedOutput);
-    // });
-  });
+  //     expect(reducer(constState, getaction)).toEqual(expectedOutput);
+  //   });
+
+  // it('ExpectOutForBatsmanGettingOut', () => {
+  //   const expectedOutput = cloneDeep(constState);
+  //   const lastbowl = {};
+  //   lastbowl.runs = 6;
+  //   lastbowl.wicket = false;
+  //   lastbowl.extras = 'NB';
+  //   lastbowl.incrementBall = false;
+  //   lastbowl.isOut = true;
+
+  //   const getaction = {
+  //     type: actionNames.NextBallActionName,
+  //     lastbowl,
+  //     isOverComplete: true,
+  //   };
+
+  //   expectedOutput.battingTeamPlayers[0].isOut = true;
+  //   expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
+  //   expectedOutput.strikerBatsmanId = 3;
+  //   expectedOutput.nonstrikerBatsmanId = 2;
+
+  //   expect(reducer(constState, getaction)).toEqual(expectedOutput);
+  // });
+  // });
 });

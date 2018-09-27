@@ -15,12 +15,14 @@ class ThisOver extends Component {
 
       return players.filter(item => (bowlerId === item.id))[0].name;
     };
-    const getExtrasStr = function getExtrasStr(extras) {
-      return extras ? `-${extras}` : '';
+    const getExtrasStr = function getExtrasStr(extras, wicket) {
+      const wicketStr = (wicket ? '-W' : '');
+      const extraStr = (extras ? `-${extras}` : '');
+      return extraStr + wicketStr;
     };
     const overData = this.props.currentOver.map((item, indx) => {
       const index = indx;
-      return <span key={index}>{item.runs + getExtrasStr(item.extras)}&nbsp;&nbsp;</span>;
+      return <span key={index}>{item.runs + getExtrasStr(item.extras, item.wicket)}&nbsp;&nbsp;</span>;
     });
     return (
       <div className="home-component">

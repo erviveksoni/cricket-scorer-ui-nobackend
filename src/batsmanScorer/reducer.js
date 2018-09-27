@@ -40,6 +40,29 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
         cloneState.strikerBatsmanId = cloneState.nonstrikerBatsmanId;
         cloneState.nonstrikerBatsmanId = nonstrikerBatsmanId;
       }
+      if (action.lastbowl.wicket) {
+        currentBatsman[0].isOut = action.lastbowl.wicket;
+        const nextBatsmanId = (
+          cloneState.strikerBatsmanId > cloneState.nonstrikerBatsmanId ?
+            cloneState.strikerBatsmanId : cloneState.nonstrikerBatsmanId
+        ) + 1;
+        const nextBatsman = action.batsmenList.players.filter(item => item.id === nextBatsmanId);
+        if (nextBatsman.length > 0) {
+          const newBatsman = {
+            name: nextBatsman[0].name,
+            id: nextBatsman[0].id,
+            runs: 0,
+            fours: 0,
+            sixes: 0,
+            ballsplayed: 0,
+            isOut: false,
+          };
+          cloneState.battingTeamPlayers.push(newBatsman);
+          cloneState.strikerBatsmanId = newBatsman.id;
+        }
+      }
+
+      // const newPlayer = action.batsmenList.players[cloneState.battingTeamPlayers.length + 1];
 
       if (action.lastbowl.extras) {
         return cloneState;
