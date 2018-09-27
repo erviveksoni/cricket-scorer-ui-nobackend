@@ -5,6 +5,7 @@ import './Home.css';
 import ThisOver from '../ThisOver/ThisOver';
 import Scorer from '../scorer/scorer';
 import CurrentScoreHeading from '../scoreHeader/CurrentScoreHeading';
+import StrikeRotator from '../strikeRotator/strikeRotator';
 import { createGameAction } from './actions';
 
 const Home = () =>
@@ -13,6 +14,7 @@ const Home = () =>
       <h3 className="text-align-center">GAME SCORER</h3>
       <CurrentScoreHeading />
       <ThisOver />
+      <StrikeRotator />
       <Scorer />
     </Container>
   );
