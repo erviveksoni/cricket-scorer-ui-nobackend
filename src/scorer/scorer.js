@@ -17,6 +17,7 @@ class Scorer extends Component {
       activeExtraButton: null,
       openModal: false,
       modalTitle: null,
+      activeOutButton: false,
     };
 
     this.nextball = this.nextball.bind(this);
@@ -51,7 +52,8 @@ class Scorer extends Component {
     }
 
     if (this.props.oversBowled < this.props.totalOvers) {
-      if (this.state.activeRunButton || this.state.activeExtraButton) {
+      if (this.state.activeRunButton || this.state.activeExtraButton ||
+        this.state.activeOutButton) {
         let run = 0;
         if (this.state.activeRunButton !== null) {
           run = this.state.activeRunButton.replace('runbtn-', '');
@@ -68,10 +70,11 @@ class Scorer extends Component {
           wicket: false,
           incrementBall: incrementball,
           extras: extra,
+          isOut: this.state.activeOutButton,
+
         };
         this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
-        this.setState({ activeRunButton: null, activeExtraButton: null });
-
+        this.setState({ activeRunButton: null, activeExtraButton: null, activeOutButton: false });
         if (isOverComplete) {
           this.onOpenModal('Next Bowler Selection', this.props.bowlingTeamPlayers);
         }
@@ -128,6 +131,11 @@ class Scorer extends Component {
             </Col>
           </Row>
           <Row>
+            <Col>
+              <div>
+                <Button className={this.state.activeOutButton === true ? 'active' : 'submitbtn'} value={this.state.activeOutButton} onClick={() => this.setState({ activeOutButton: !this.state.activeOutButton })}>Out</Button>
+              </div>
+            </Col>
             <Col>
               <div>
                 <Button className="submitbtn" onClick={this.nextball}>Next Ball</Button>
