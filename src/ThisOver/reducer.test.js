@@ -167,4 +167,30 @@ describe('ThisOver/reducer', () => {
 
     expect(reducer(expectedTest3InputState, nextBallAction)).toEqual(expectedTest3outputState);
   });
+
+  it('Set the Current Bowler Id After the next bowler has choosen.', () => {
+    const expectedTest3InputState = {
+      currentOver: [
+      ],
+      noOfValidBallsInCurrentOver: 0,
+      currentBowlerId: null,
+    };
+    const newBowler = {
+      id: 2,
+      name: 'Shoib',
+    };
+    const nextBallAction = {
+      type: actionConstants.AddNewBowlerActionName,
+      newBowler,
+    };
+
+    const expectedTest3outputState = {
+      currentOver: [
+      ],
+      noOfValidBallsInCurrentOver: 0,
+      currentBowlerId: 2,
+    };
+
+    expect(reducer(expectedTest3InputState, nextBallAction)).toEqual(expectedTest3outputState);
+  });
 });
