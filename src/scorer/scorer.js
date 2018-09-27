@@ -39,7 +39,7 @@ class Scorer extends Component {
         extras: extra,
       };
       this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
-      this.setState({ activeRunButton: null });
+      this.setState({ activeRunButton: null, activeExtraButton: null });
     }
   }
 
