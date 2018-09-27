@@ -23,7 +23,7 @@ class ThisOver extends Component {
       return <span key={index}>{item.runs + getExtrasStr(item.extras)}&nbsp;&nbsp;</span>;
     });
     return (
-      <div className="home-component">
+      <div className="home-component this-over-wrapper">
         <Row className="zero-margin">
           <Col>
             <Row ><span>This Over</span></Row>
