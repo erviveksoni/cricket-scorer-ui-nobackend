@@ -14,16 +14,6 @@ const expectedInitialState = {
       madins: 0,
       wickets: 0,
     },
-    {
-      name: 'Shoeb',
-      id: 2,
-      runs: 0,
-      totalOversBowled: 0,
-      currentOverBalls: 0,
-      extras: 0,
-      madins: 0,
-      wickets: 0,
-    },
   ],
 };
 
@@ -56,16 +46,6 @@ describe('BowlerScorer/reducer', () => {
           madins: 0,
           wickets: 0,
         },
-        {
-          name: 'Shoeb',
-          id: 2,
-          runs: 0,
-          extras: 0,
-          totalOversBowled: 0,
-          currentOverBalls: 0,
-          madins: 0,
-          wickets: 0,
-        },
       ],
     };
     expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
@@ -90,16 +70,6 @@ describe('BowlerScorer/reducer', () => {
           totalOversBowled: 0,
           currentOverBalls: 1,
           extras: 1,
-          madins: 0,
-          wickets: 0,
-        },
-        {
-          name: 'Shoeb',
-          id: 2,
-          runs: 0,
-          extras: 0,
-          totalOversBowled: 0,
-          currentOverBalls: 0,
           madins: 0,
           wickets: 0,
         },
