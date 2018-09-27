@@ -7,7 +7,7 @@ const initialState = {
   isNewOverStarting: true,
   bowlingTeamPlayers: [
     {
-      name: 'Wasim',
+      name: 'Player 21',
       id: 1,
       runs: 0,
       totalOversBowled: 0,

@@ -7,7 +7,7 @@ const expectedInitialState = {
   isCurrentOverMaiden: true,
   bowlingTeamPlayers: [
     {
-      name: 'Wasim',
+      name: 'Player 21',
       id: 1,
       runs: 0,
       totalOversBowled: 0,
@@ -41,7 +41,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: false,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 2,
           totalOversBowled: 0,
@@ -70,7 +70,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: false,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 1,
           totalOversBowled: 0,
@@ -90,7 +90,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 0,
@@ -116,7 +116,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 1,
@@ -137,7 +137,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 0,
@@ -163,7 +163,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: false,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 1,
           totalOversBowled: 1,
@@ -183,7 +183,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 1,
@@ -209,7 +209,7 @@ describe('BowlerScorer/reducer', () => {
       isCurrentOverMaiden: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 2,
@@ -228,7 +228,7 @@ describe('BowlerScorer/reducer', () => {
       type: actionNames.AddNewBowlerActionName,
       newBowler: {
         id: 1,
-        name: 'Wasim',
+        name: 'Player 21',
       },
     };
 
@@ -237,7 +237,7 @@ describe('BowlerScorer/reducer', () => {
       isNewOverStarting: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 0,
@@ -265,7 +265,7 @@ describe('BowlerScorer/reducer', () => {
       isNewOverStarting: true,
       bowlingTeamPlayers: [
         {
-          name: 'Wasim',
+          name: 'Player 21',
           id: 1,
           runs: 0,
           totalOversBowled: 0,
