@@ -43,7 +43,7 @@ class Scorer extends Component {
         this.setState({ activeRunButton: null, activeExtraButton: null });
       }
     } else {
-      alert('Inning over!');
+      // alert('Inning over!');
     }
   }
 
