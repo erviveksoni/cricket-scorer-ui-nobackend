@@ -32,7 +32,7 @@ class Scorer extends Component {
         extras: extra,
       };
       this.props.performaction(lastbowl, this.props.currentBowlerId);
-      this.setState({ activeRunButton: null });
+      this.setState({ activeRunButton: null, activeExtraButton: null });
     }
   }
 
@@ -59,19 +59,19 @@ class Scorer extends Component {
           </Col>
         </Row>
         <Row className="scorer-rows">
-          <Col md="2">
+          <Col md="2" sm="2">
             <span>Extras: &nbsp;</span>
           </Col>
-          <Col md="2">
+          <Col md="2" sm="2">
             <Button className={this.state.activeExtraButton === 'WD' ? 'extraBtn active' : 'extraBtn'} value="WD" onClick={() => this.setState({ activeExtraButton: 'WD' })}>WD</Button>
           </Col>
-          <Col md="2">
+          <Col md="2" sm="2">
             <Button className={this.state.activeExtraButton === 'NB' ? 'extraBtn active' : 'extraBtn'} value="NB" onClick={() => this.setState({ activeExtraButton: 'NB' })}>NB</Button>
           </Col>
-          <Col md="2">
+          <Col md="2" sm="2">
             <Button className={this.state.activeExtraButton === 'B' ? 'extraBtn active' : 'extraBtn'} value="B" onClick={() => this.setState({ activeExtraButton: 'B' })}>B</Button>
           </Col>
-          <Col md="2">
+          <Col md="2" sm="2">
             <Button className={this.state.activeExtraButton === 'LB' ? 'extraBtn active' : 'extraBtn'} value="LB" onClick={() => this.setState({ activeExtraButton: 'LB' })}>LB</Button>
           </Col>
         </Row>

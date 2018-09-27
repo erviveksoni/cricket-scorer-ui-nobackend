@@ -101,11 +101,8 @@ describe('ThisOver/reducer', () => {
         {
           runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
         },
-        {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
-        },
       ],
-      noOfValidBallsInCurrentOver: 6,
+      noOfValidBallsInCurrentOver: 5,
       currentBowlerId: 1,
     };
     const nextBallAction = {
@@ -120,12 +117,8 @@ describe('ThisOver/reducer', () => {
     };
 
     const expectedTest2OutputState = {
-      currentOver: [
-        {
-          runs: 1, extra: null, wicket: false, incrementBall: true,
-        },
-      ],
-      noOfValidBallsInCurrentOver: 1,
+      currentOver: [],
+      noOfValidBallsInCurrentOver: 0,
       currentBowlerId: 1,
     };
 
