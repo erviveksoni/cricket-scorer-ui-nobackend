@@ -62,8 +62,6 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
         }
       }
 
-      // const newPlayer = action.batsmenList.players[cloneState.battingTeamPlayers.length + 1];
-
       if (action.lastbowl.extras) {
         return cloneState;
       }

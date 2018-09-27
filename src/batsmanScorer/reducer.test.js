@@ -649,50 +649,61 @@ describe('batsmanScorer/reducer', () => {
     });
   });
 
-  // describe('testOutWhenNoRunsInSameOverWithNoExtras', () => {
-  //   it('ExpectUpdateisOutForBatsmanGettingOut', () => {
-  //     const expectedOutput = cloneDeep(constState);
-  //     const lastbowl = {};
-  //     lastbowl.runs = 6;
-  //     lastbowl.wicket = true;
-  //     lastbowl.extras = 'NB';
-  //     lastbowl.incrementBall = false;
+  describe('testOutWhenNoRunsInSameOverWithNoExtras', () => {
+    it('ExpectUpdateisOutForBatsmanGettingOut', () => {
+      const expectedOutput = cloneDeep(constState);
+      expectedOutput.battingTeamPlayers.push({
+        name: 'Player 3',
+        id: 3,
+        runs: 0,
+        fours: 0,
+        sixes: 0,
+        ballsplayed: 0,
+        isOut: false,
+      });
+      const lastbowl = {};
+      lastbowl.runs = 0;
+      lastbowl.wicket = true;
+      lastbowl.extras = null;
+      lastbowl.incrementBall = true;
 
-  //     const getaction = {
-  //       type: actionNames.NextBallActionName,
-  //       lastbowl,
-  //       isOverComplete: true,
-  //     };
+      const getaction = {
+        type: actionNames.NextBallActionName,
+        lastbowl,
+        isOverComplete: false,
+        batsmenList: {
+          name: 'Team 1',
+          players: [
+            {
+              name: 'Player 1',
+              id: 1,
+            },
+            {
+              name: 'Player 2',
+              id: 2,
+            },
+            {
+              name: 'Player 3',
+              id: 3,
+            },
+            {
+              name: 'Player 4',
+              id: 4,
+            },
+            {
+              name: 'Player 5',
+              id: 5,
+            },
+          ],
+        },
+      };
 
-  //     expectedOutput.battingTeamPlayers[0].isOut = true;
-  //     expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
-  //     expectedOutput.strikerBatsmanId = 3;
-  //     expectedOutput.nonstrikerBatsmanId = 2;
+      expectedOutput.battingTeamPlayers[0].isOut = true;
+      expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
+      expectedOutput.strikerBatsmanId = 3;
+      expectedOutput.nonstrikerBatsmanId = 2;
 
-  //     expect(reducer(constState, getaction)).toEqual(expectedOutput);
-  //   });
-
-  // it('ExpectOutForBatsmanGettingOut', () => {
-  //   const expectedOutput = cloneDeep(constState);
-  //   const lastbowl = {};
-  //   lastbowl.runs = 6;
-  //   lastbowl.wicket = false;
-  //   lastbowl.extras = 'NB';
-  //   lastbowl.incrementBall = false;
-  //   lastbowl.isOut = true;
-
-  //   const getaction = {
-  //     type: actionNames.NextBallActionName,
-  //     lastbowl,
-  //     isOverComplete: true,
-  //   };
-
-  //   expectedOutput.battingTeamPlayers[0].isOut = true;
-  //   expectedOutput.battingTeamPlayers[0].ballsplayed += 1;
-  //   expectedOutput.strikerBatsmanId = 3;
-  //   expectedOutput.nonstrikerBatsmanId = 2;
-
-  //   expect(reducer(constState, getaction)).toEqual(expectedOutput);
-  // });
-  // });
+      expect(reducer(constState, getaction)).toEqual(expectedOutput);
+    });
+  });
 });
