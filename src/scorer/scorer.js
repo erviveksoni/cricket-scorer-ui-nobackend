@@ -47,6 +47,11 @@ class Scorer extends Component {
   }
 
   nextball() {
+    let lastBowlerId = 0;
+    if (this.props.currentBowlerId !== null) {
+      lastBowlerId = this.props.currentBowlerId;
+    }
+
     if (this.state.bownlingTeam === null) {
       this.setState({
         bownlingTeam: this.props.teams.filter(team =>
@@ -55,7 +60,7 @@ class Scorer extends Component {
     }
 
     if (this.props.currentBowlerId === null) {
-      this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam);
+      this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam.filter(i => i.id !== lastBowlerId));
 
       return;
     }
@@ -85,7 +90,7 @@ class Scorer extends Component {
         this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
         this.setState({ activeRunButton: null, activeExtraButton: null, activeOutButton: false });
         if (isOverComplete) {
-          this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam);
+          this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam.filter(i => i.id !== lastBowlerId));
         }
       }
     } else {
