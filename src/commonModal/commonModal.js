@@ -70,7 +70,7 @@ class CommonModal extends React.Component {
             </div>
           </BootstrapTable>
           <button onClick={this.onCloseModal}>OK</button>
-          <button onClick={this.onDeselect}>Deselect</button>
+          &nbsp;<button onClick={this.onDeselect}>Deselect</button>
         </Modal>
       </div>
     );
