@@ -141,7 +141,6 @@ class Scorer extends Component {
 
 Scorer.propTypes = {
   performaction: PropTypes.func.isRequired,
-  currentBowlerId: PropTypes.number.isRequired,
   noOfValidBallsInCurrentOver: PropTypes.number.isRequired,
   oversBowled: PropTypes.number.isRequired,
   totalOvers: PropTypes.number.isRequired,

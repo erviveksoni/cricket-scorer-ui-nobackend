@@ -14,7 +14,6 @@ class CommonModal extends React.Component {
     super(props);
     this.state = {
       selection: {},
-      id: 0,
     };
 
     this.onCloseModal = this.onCloseModal.bind(this);
@@ -31,15 +30,20 @@ class CommonModal extends React.Component {
   }
 
   onCloseModal() {
-    if (this.state.selection !== null) {
-      const rowobject = this.state.selection;
-      const idstring = Object.keys(rowobject)[0];
+    let rowidval = 0;
+    const rowobject = this.state.selection;
+    if (rowobject === null) {
+      this.props.onCloseModal(0);
+      return;
+    }
+    const idstring = Object.keys(rowobject)[0];
+    if (idstring !== null && idstring !== undefined) {
       const rowid = parseInt(idstring, 0);
-      this.setState({ id: this.state.selection[rowid].id });
-      this.onDeselect();
+      rowidval = this.state.selection[rowid].id;
     }
 
-    this.props.onCloseModal(this.state.id);
+    this.onDeselect();
+    this.props.onCloseModal(rowidval);
   }
 
   render() {
