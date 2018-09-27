@@ -50,6 +50,9 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
           newState.isNewOverStarting = true;
         }
       }
+      if (action.lastbowl.wicket) {
+        currentBowler.wickets += 1;
+      }
       return newState;
     }
     case actionNames.AddNewBowlerActionName: {
