@@ -16,7 +16,7 @@ describe('ThisOver/reducer', () => {
   });
 
   it('Next ball action should update the This Over.', () => {
-    const expectedTest1InputState = {
+    const testInputState = {
       currentOver: [
         {
           runs: 1, extra: null, wicket: false, incrementBall: true,
@@ -49,7 +49,7 @@ describe('ThisOver/reducer', () => {
       },
     };
 
-    const expectedTest1OutputState = {
+    const expectedTestOutputState = {
       currentOver: [
         {
           runs: 1, extra: null, wicket: false, incrementBall: true,
@@ -74,11 +74,11 @@ describe('ThisOver/reducer', () => {
       currentBowlerId: 1,
     };
 
-    expect(reducer(expectedTest1InputState, nextBallAction)).toEqual(expectedTest1OutputState);
+    expect(reducer(testInputState, nextBallAction)).toEqual(expectedTestOutputState);
   });
 
   it('Next ball action should update the This Over after last ball.', () => {
-    const expectedTest2InputState = {
+    const testInputState = {
       currentOver: [
         {
           runs: 1, extra: null, wicket: false, incrementBall: true,
@@ -116,12 +116,12 @@ describe('ThisOver/reducer', () => {
       },
     };
 
-    const expectedTest2OutputState = {
+    const expectedTestOutputState = {
       currentOver: [],
       noOfValidBallsInCurrentOver: 0,
       currentBowlerId: 1,
     };
 
-    expect(reducer(expectedTest2InputState, nextBallAction)).toEqual(expectedTest2OutputState);
+    expect(reducer(testInputState, nextBallAction)).toEqual(expectedTestOutputState);
   });
 });

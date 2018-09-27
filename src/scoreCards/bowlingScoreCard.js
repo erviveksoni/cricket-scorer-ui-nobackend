@@ -25,7 +25,7 @@ const BowlingScoreCard = (props) => {
   const columns = [
     { name: 'name', display: 'Bowler', renderer: mRenderer },
     { name: 'totalOversBowled', display: 'Overs', renderer: overRenderer },
-    { name: 'madins', display: 'Maiden' },
+    { name: 'maidens', display: 'Maiden' },
     { name: 'runs', display: 'Run' },
     { name: 'wickets', display: 'Wickets' },
   ];
