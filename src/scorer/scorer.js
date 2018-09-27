@@ -18,6 +18,7 @@ class Scorer extends Component {
       openModal: false,
       modalTitle: null,
       activeOutButton: false,
+      bownlingTeam: null,
     };
 
     this.nextball = this.nextball.bind(this);
@@ -35,9 +36,10 @@ class Scorer extends Component {
 
   onCloseModal(rowid) {
     if (rowid > 0) {
+      const bowlerObj = this.state.bownlingTeam.filter(i => i.id === rowid)[0];
       const bowler = {
-        id: rowid,
-        name: 'Shoib',
+        id: bowlerObj.id,
+        name: bowlerObj.name,
       };
       this.setState({ openModal: false, modalTitle: null });
       this.props.addNewBowlerAction(bowler);
@@ -45,8 +47,15 @@ class Scorer extends Component {
   }
 
   nextball() {
+    if (this.state.bownlingTeam === null) {
+      this.setState({
+        bownlingTeam: this.props.teams.filter(team =>
+          team.name === this.props.bowlingTeamName)[0].players,
+      });
+    }
+
     if (this.props.currentBowlerId === null) {
-      this.onOpenModal('Next Bowler Selection', this.props.bowlingTeamPlayers);
+      this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam);
 
       return;
     }
@@ -76,7 +85,7 @@ class Scorer extends Component {
         this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
         this.setState({ activeRunButton: null, activeExtraButton: null, activeOutButton: false });
         if (isOverComplete) {
-          this.onOpenModal('Next Bowler Selection', this.props.bowlingTeamPlayers);
+          this.onOpenModal('Next Bowler Selection', this.state.bownlingTeam);
         }
       }
     } else {
@@ -148,6 +157,7 @@ class Scorer extends Component {
 }
 
 Scorer.propTypes = {
+  currentBowlerId: PropTypes.number.isRequired,
   performaction: PropTypes.func.isRequired,
   noOfValidBallsInCurrentOver: PropTypes.number.isRequired,
   oversBowled: PropTypes.number.isRequired,
@@ -155,6 +165,8 @@ Scorer.propTypes = {
   bowlingTeamPlayers: PropTypes.instanceOf(Object).isRequired,
   addNewBowlerAction: PropTypes.instanceOf(Object).isRequired,
   modalTitle: PropTypes.string.isRequired,
+  teams: PropTypes.instanceOf(Object).isRequired,
+  bowlingTeamName: PropTypes.string.isRequired,
 };
 
 const mapStateAsProps = state => (
@@ -164,6 +176,8 @@ const mapStateAsProps = state => (
     oversBowled: state.totalScorerReducer.currentInningScore.oversBowled,
     totalOvers: state.totalScorerReducer.totalOvers,
     bowlingTeamPlayers: state.bowlerScorer.bowlingTeamPlayers,
+    bowlingTeamName: state.totalScorerReducer.bowlingTeam,
+    teams: state.playerList.Teams,
   });
 
 const mapDispatcherAsProps = dispatch => ({

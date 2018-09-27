@@ -3,8 +3,8 @@ import actionNames from '../store/actionConstants';
 import ballEvaluator from '../utils/BallEvaluator';
 
 const initialState = {
-  bowlingTeam: 'Team2',
-  battingTeam: 'Team1',
+  bowlingTeam: 'Team 2',
+  battingTeam: 'Team 1',
   currentBowlsBowled: 0,
   totalOvers: 20,
   previousInningScore: {
