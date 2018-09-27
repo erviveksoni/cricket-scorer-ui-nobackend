@@ -21,25 +21,29 @@ class Scorer extends Component {
   }
 
   nextball() {
-    if (this.state.activeRunButton || this.state.activeExtraButton) {
-      let run = 0;
-      if (this.state.activeRunButton !== null) {
-        run = this.state.activeRunButton.replace('runbtn-', '');
+    if (this.props.oversBowled < this.props.totalOvers) {
+      if (this.state.activeRunButton || this.state.activeExtraButton) {
+        let run = 0;
+        if (this.state.activeRunButton !== null) {
+          run = this.state.activeRunButton.replace('runbtn-', '');
+        }
+
+        run = parseInt(run, 0);
+        const incrementball = true;
+        const isOverComplete = (incrementball && this.props.noOfValidBallsInCurrentOver === 5);
+        const extra = this.state.activeExtraButton ? this.state.activeExtraButton : null;
+
+        const lastbowl = {
+          runs: run,
+          wicket: false,
+          incrementBall: !(extra === 'WD' || extra === 'NB'),
+          extras: extra,
+        };
+        this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
+        this.setState({ activeRunButton: null, activeExtraButton: null });
       }
-
-      run = parseInt(run, 0);
-      const incrementball = true;
-      const isOverComplete = (incrementball && this.props.noOfValidBallsInCurrentOver === 5);
-      const extra = this.state.activeExtraButton ? this.state.activeExtraButton : null;
-
-      const lastbowl = {
-        runs: run,
-        wicket: false,
-        incrementBall: !(extra === 'WD' || extra === 'NB'),
-        extras: extra,
-      };
-      this.props.performaction(lastbowl, this.props.currentBowlerId, isOverComplete);
-      this.setState({ activeRunButton: null, activeExtraButton: null });
+    } else {
+      alert('Inning over!');
     }
   }
 
@@ -97,12 +101,16 @@ Scorer.propTypes = {
   performaction: PropTypes.func.isRequired,
   currentBowlerId: PropTypes.number.isRequired,
   noOfValidBallsInCurrentOver: PropTypes.number.isRequired,
+  oversBowled: PropTypes.number.isRequired,
+  totalOvers: PropTypes.number.isRequired,
 };
 
 const mapStateAsProps = state => (
   {
     currentBowlerId: state.thisOver.currentBowlerId,
     noOfValidBallsInCurrentOver: state.thisOver.noOfValidBallsInCurrentOver,
+    oversBowled: state.totalScorerReducer.currentInningScore.oversBowled,
+    totalOvers: state.totalScorerReducer.totalOvers,
   });
 
 const mapDispatcherAsProps = dispatch => ({
