@@ -16,6 +16,7 @@ class Scorer extends Component {
       activeRunButton: null,
       activeExtraButton: null,
       openModal: false,
+      modalTitle: null,
     };
 
     this.nextball = this.nextball.bind(this);
@@ -26,23 +27,27 @@ class Scorer extends Component {
   onOpenModal(modalTitle, modalData) {
     this.setState({
       openModal: true,
-      modalTite: modalTitle,
+      modalTitle,
       modalData,
     });
   }
 
   onCloseModal(rowid) {
-    const bowler = {
-      id: rowid,
-      name: 'Shoib',
-    };
-    this.setState({ openModal: false });
-    this.props.addNewBowlerAction(bowler);
+    if (rowid > 0) {
+      const bowler = {
+        id: rowid,
+        name: 'Shoib',
+      };
+      this.setState({ openModal: false, modalTitle: null });
+      this.props.addNewBowlerAction(bowler);
+    }
   }
 
   nextball() {
     if (this.props.currentBowlerId === null) {
       this.onOpenModal('Next Bowler Selection', this.props.bowlingTeamPlayers);
+
+      return;
     }
 
     if (this.props.oversBowled < this.props.totalOvers) {
@@ -72,7 +77,7 @@ class Scorer extends Component {
         }
       }
     } else {
-      alert('Inning over!');
+      // alert('Inning over!');
     }
   }
 
@@ -81,7 +86,7 @@ class Scorer extends Component {
       <div>
         <CommonModal
           modalData={this.state.modalData}
-          modalTite={this.state.modalTite}
+          modalTite={this.state.modalTitle}
           openModal={this.state.openModal}
           onCloseModal={this.onCloseModal}
         />
@@ -106,19 +111,19 @@ class Scorer extends Component {
             </Col>
           </Row>
           <Row className="scorer-rows">
-            <Col md="2">
+            <Col md="2" sm="2">
               <span>Extras: &nbsp;</span>
             </Col>
-            <Col md="2">
+            <Col md="2" sm="2">
               <Button className={this.state.activeExtraButton === 'WD' ? 'extraBtn active' : 'extraBtn'} value="WD" onClick={() => this.setState({ activeExtraButton: 'WD' })}>WD</Button>
             </Col>
-            <Col md="2">
+            <Col md="2" sm="2">
               <Button className={this.state.activeExtraButton === 'NB' ? 'extraBtn active' : 'extraBtn'} value="NB" onClick={() => this.setState({ activeExtraButton: 'NB' })}>NB</Button>
             </Col>
-            <Col md="2">
+            <Col md="2" sm="2">
               <Button className={this.state.activeExtraButton === 'B' ? 'extraBtn active' : 'extraBtn'} value="B" onClick={() => this.setState({ activeExtraButton: 'B' })}>B</Button>
             </Col>
-            <Col md="2">
+            <Col md="2" sm="2">
               <Button className={this.state.activeExtraButton === 'LB' ? 'extraBtn active' : 'extraBtn'} value="LB" onClick={() => this.setState({ activeExtraButton: 'LB' })}>LB</Button>
             </Col>
           </Row>
@@ -142,6 +147,7 @@ Scorer.propTypes = {
   totalOvers: PropTypes.number.isRequired,
   bowlingTeamPlayers: PropTypes.instanceOf(Object).isRequired,
   addNewBowlerAction: PropTypes.instanceOf(Object).isRequired,
+  modalTitle: PropTypes.string.isRequired,
 };
 
 const mapStateAsProps = state => (

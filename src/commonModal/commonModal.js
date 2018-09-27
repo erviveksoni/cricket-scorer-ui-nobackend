@@ -35,7 +35,7 @@ class CommonModal extends React.Component {
       const rowobject = this.state.selection;
       const idstring = Object.keys(rowobject)[0];
       const rowid = parseInt(idstring, 0);
-      this.setState({ selection: this.state.selection[rowid].id });
+      this.setState({ id: this.state.selection[rowid].id });
       this.onDeselect();
     }
 

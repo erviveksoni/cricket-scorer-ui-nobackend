@@ -34,6 +34,13 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
       const currentBatsman = cloneState.battingTeamPlayers
         .filter(item => item.id === cloneState.strikerBatsmanId);
 
+      if ((action.lastbowl.runs % 2 !== 0 && !action.isOverComplete) ||
+        (action.lastbowl.runs % 2 === 0 && action.isOverComplete)) {
+        const nonstrikerBatsmanId = cloneState.strikerBatsmanId;
+        cloneState.strikerBatsmanId = cloneState.nonstrikerBatsmanId;
+        cloneState.nonstrikerBatsmanId = nonstrikerBatsmanId;
+      }
+
       if (action.lastbowl.extras) {
         return cloneState;
       }
@@ -48,13 +55,6 @@ const batsManScorerReducer = function batsManScorerReducer(state = initialState,
       }
 
       currentBatsman[0].runs += action.lastbowl.runs;
-
-      if ((action.lastbowl.runs % 2 !== 0 && !action.isOverComplete) ||
-      (action.lastbowl.runs % 2 === 0 && action.isOverComplete)) {
-        const nonstrikerBatsmanId = cloneState.strikerBatsmanId;
-        cloneState.strikerBatsmanId = cloneState.nonstrikerBatsmanId;
-        cloneState.nonstrikerBatsmanId = nonstrikerBatsmanId;
-      }
 
       return cloneState;
     }

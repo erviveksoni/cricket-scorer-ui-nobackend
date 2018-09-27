@@ -19,6 +19,8 @@
         { "runs": 2, "extra": "WD", "wicket": false, "incrementBall": false },
         { "runs": 1, "extra": "B", "wicket": false, "incrementBall": true }
       ],
+    "isCurrentOverMaiden": true,
+    "isNewOverStarting": true,
     "noOfValidBallsInCurrentOver": 5,
     "totalOvers": 10,
     "currentBowlsBowled": 3,
@@ -32,7 +34,7 @@
             "totalOversBowled": 0,
             "currentOverBalls": 0,
             "extras":0,
-            "madins": 0,
+            "maidens": 0,
             "wickets": 0
         },
         {
@@ -42,7 +44,7 @@
             "totalOversBowled": 0,
             "currentOverBalls": 0,
             "extras":0,
-            "madins": 0,
+            "maidens": 0,
             "wickets": 0
         }
     ],

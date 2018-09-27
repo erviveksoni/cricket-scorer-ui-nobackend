@@ -24,6 +24,12 @@ const thisOverReducer = function thisOverReducer(state = initialState, action) {
 
       return newState;
     }
+    case actionNames.AddNewBowlerActionName: {
+      const newState = cloneDeep(state);
+      newState.currentBowlerId = action.newBowler.id;
+
+      return newState;
+    }
     default: {
       return state;
     }

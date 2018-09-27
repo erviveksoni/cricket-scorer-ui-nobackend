@@ -9,18 +9,18 @@ import './ThisOver.css';
 class ThisOver extends Component {
   render() {
     const getBowlerName = function getBowlerName(bowlerId, players) {
-      for (let i = 0; i < players.length; i += 1) {
-        if (bowlerId === players[i].id) {
-          return players[i].name;
-        }
+      if (!bowlerId) {
+        return '';
       }
-      return '';
-    };
 
+      return players.filter(item => (bowlerId === item.id))[0].name;
+    };
+    const getExtrasStr = function getExtrasStr(extras) {
+      return extras ? `-${extras}` : '';
+    };
     const overData = this.props.currentOver.map((item, indx) => {
-      const extraStr = item.extras ? `-${item.extras}` : '';
       const index = indx;
-      return <span key={index}>{item.runs + extraStr}&nbsp;&nbsp;</span>;
+      return <span key={index}>{item.runs + getExtrasStr(item.extras)}&nbsp;&nbsp;</span>;
     });
     return (
       <div className="home-component">
