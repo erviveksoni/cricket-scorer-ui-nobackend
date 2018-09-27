@@ -38,7 +38,7 @@ const BattingScoreCard = (props) => {
         <h6><b>Batting Team</b></h6>
       </div>
       <BootstrapTable
-        select="multiple"
+        select="single"
         columns={columns}
         data={props.battingTeamPlayers}
         headers={displayHeaders}
