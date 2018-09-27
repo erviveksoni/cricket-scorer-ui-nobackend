@@ -13,4 +13,14 @@ const getNextBallAction =
     return getaction;
   };
 
-export default getNextBallAction;
+const getAddNewBowlerAction =
+  function getAddNewBowlerAction(newBowler) {
+    const getaction = {
+      type: actionNames.AddNewBowlerActionName,
+      newBowler,
+    };
+
+    return getaction;
+  };
+
+export { getNextBallAction, getAddNewBowlerAction };

@@ -77,8 +77,8 @@ describe('ThisOver/reducer', () => {
     expect(reducer(expectedTest1InputState, nextBallAction)).toEqual(expectedTest1OutputState);
   });
 
-  it('Next ball action should update the This Over after last ball.', () => {
-    const expectedTest2InputState = {
+  it('Set the Current Bowler as Null after 6 valid balls.', () => {
+    const expectedTest3InputState = {
       currentOver: [
         {
           runs: 1, extra: null, wicket: false, incrementBall: true,
@@ -90,22 +90,13 @@ describe('ThisOver/reducer', () => {
           runs: 0, extra: null, wicket: true, incrementBall: true,
         },
         {
-          runs: 6, extra: Constants.EXTRAS.NB, wicket: false, incrementBall: false,
+          runs: 6, extra: null, wicket: false, incrementBall: true,
         },
         {
           runs: 0, extra: null, wicket: false, incrementBall: true,
         },
-        {
-          runs: 2, extra: Constants.EXTRAS.WD, wicket: false, incrementBall: false,
-        },
-        {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
-        },
-        {
-          runs: 1, extra: Constants.EXTRAS.B, wicket: false, incrementBall: true,
-        },
       ],
-      noOfValidBallsInCurrentOver: 6,
+      noOfValidBallsInCurrentOver: 5,
       currentBowlerId: 1,
     };
     const nextBallAction = {
@@ -119,16 +110,13 @@ describe('ThisOver/reducer', () => {
       },
     };
 
-    const expectedTest2OutputState = {
+    const expectedTest3outputState = {
       currentOver: [
-        {
-          runs: 1, extra: null, wicket: false, incrementBall: true,
-        },
       ],
-      noOfValidBallsInCurrentOver: 1,
-      currentBowlerId: 1,
+      noOfValidBallsInCurrentOver: 0,
+      currentBowlerId: null,
     };
 
-    expect(reducer(expectedTest2InputState, nextBallAction)).toEqual(expectedTest2OutputState);
+    expect(reducer(expectedTest3InputState, nextBallAction)).toEqual(expectedTest3outputState);
   });
 });

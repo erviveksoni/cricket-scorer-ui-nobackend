@@ -11,13 +11,16 @@ const thisOverReducer = function thisOverReducer(state = initialState, action) {
   switch (action.type) {
     case actionNames.NextBallActionName: {
       const newState = cloneDeep(state);
-      if (state.noOfValidBallsInCurrentOver === 6) {
+      if (action.lastbowl.incrementBall && newState.noOfValidBallsInCurrentOver === 5) {
         newState.currentOver = [];
-        newState.noOfValidBallsInCurrentOver = 1;
+        newState.currentBowlerId = null;
+        newState.noOfValidBallsInCurrentOver = 0;
       } else if (action.lastbowl.incrementBall) {
         newState.noOfValidBallsInCurrentOver += 1;
+        newState.currentOver.push(action.lastbowl);
+      } else {
+        newState.currentOver.push(action.lastbowl);
       }
-      newState.currentOver.push(action.lastbowl);
 
       return newState;
     }

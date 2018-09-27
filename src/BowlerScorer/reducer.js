@@ -14,16 +14,6 @@ const initialState = {
       madins: 0,
       wickets: 0,
     },
-    {
-      name: 'Shoeb',
-      id: 2,
-      runs: 0,
-      totalOversBowled: 0,
-      currentOverBalls: 0,
-      extras: 0,
-      madins: 0,
-      wickets: 0,
-    },
   ],
 };
 
@@ -51,6 +41,29 @@ const bowlerScorerReducer = function bowlerScorerReducer(state = initialState, a
         });
       return newState;
     }
+    case actionNames.AddNewBowlerActionName: {
+      const newState = cloneDeep(state);
+      const currentBowler = newState.bowlingTeamPlayers
+        .filter(item => item.id === action.newBowler.id);
+
+      if (currentBowler === null || currentBowler.length === 0) {
+        const newBowler = {
+          name: action.newBowler.name,
+          id: action.newBowler.id,
+          runs: 0,
+          totalOversBowled: 0,
+          currentOverBalls: 0,
+          extras: 0,
+          madins: 0,
+          wickets: 0,
+        };
+
+        newState.bowlingTeamPlayers.push(newBowler);
+      }
+
+      return newState;
+    }
+
     default: {
       return state;
     }

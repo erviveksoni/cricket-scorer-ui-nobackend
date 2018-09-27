@@ -14,16 +14,6 @@ const expectedInitialState = {
       madins: 0,
       wickets: 0,
     },
-    {
-      name: 'Shoeb',
-      id: 2,
-      runs: 0,
-      totalOversBowled: 0,
-      currentOverBalls: 0,
-      extras: 0,
-      madins: 0,
-      wickets: 0,
-    },
   ],
 };
 
@@ -56,16 +46,6 @@ describe('BowlerScorer/reducer', () => {
           madins: 0,
           wickets: 0,
         },
-        {
-          name: 'Shoeb',
-          id: 2,
-          runs: 0,
-          extras: 0,
-          totalOversBowled: 0,
-          currentOverBalls: 0,
-          madins: 0,
-          wickets: 0,
-        },
       ],
     };
     expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
@@ -93,13 +73,65 @@ describe('BowlerScorer/reducer', () => {
           madins: 0,
           wickets: 0,
         },
+      ],
+    };
+    expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
+  });
+
+  it('Should add bowler who is not present in Bowlers list', () => {
+    const nextBallAction = {
+      type: actionNames.AddNewBowlerActionName,
+      newBowler: {
+        id: 2,
+        name: 'Shoib',
+      },
+    };
+
+    const expectedOutputState = {
+      bowlingTeamPlayers: [
         {
-          name: 'Shoeb',
-          id: 2,
+          name: 'Wasim',
+          id: 1,
           runs: 0,
-          extras: 0,
           totalOversBowled: 0,
           currentOverBalls: 0,
+          extras: 0,
+          madins: 0,
+          wickets: 0,
+        },
+        {
+          name: 'Shoib',
+          id: 2,
+          runs: 0,
+          totalOversBowled: 0,
+          currentOverBalls: 0,
+          extras: 0,
+          madins: 0,
+          wickets: 0,
+        },
+      ],
+    };
+    expect(reducer(expectedInitialState, nextBallAction)).toEqual(expectedOutputState);
+  });
+
+  it('Should not add bowler who is already present in Bowlers list', () => {
+    const nextBallAction = {
+      type: actionNames.AddNewBowlerActionName,
+      newBowler: {
+        id: 1,
+        name: 'Wasim',
+      },
+    };
+
+    const expectedOutputState = {
+      bowlingTeamPlayers: [
+        {
+          name: 'Wasim',
+          id: 1,
+          runs: 0,
+          totalOversBowled: 0,
+          currentOverBalls: 0,
+          extras: 0,
           madins: 0,
           wickets: 0,
         },
