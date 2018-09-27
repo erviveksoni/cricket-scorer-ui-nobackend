@@ -8,3 +8,7 @@
     background-color: rgba(0, 102, 255, 0.94) !important;
     color: white
 } 
+
+.scorer-rows {
+    margin-bottom: 10px;
+}

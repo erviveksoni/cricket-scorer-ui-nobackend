@@ -1,3 +1,7 @@
 .table-bordered {
     border: 2px solid #dee2e6;
 }
+
+tr {
+    cursor: text !important;
+}
