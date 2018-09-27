@@ -7,7 +7,7 @@ const constState = {
   nonstrikerBatsmanId: 2,
   battingTeamPlayers: [
     {
-      name: 'Sachin',
+      name: 'Player 1',
       id: 1,
       runs: 0,
       fours: 0,
@@ -16,7 +16,7 @@ const constState = {
       isOut: false,
     },
     {
-      name: 'Rahul',
+      name: 'Player 2',
       id: 2,
       runs: 0,
       fours: 0,
