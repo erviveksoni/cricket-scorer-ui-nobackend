@@ -3,8 +3,8 @@ import reducer from './reducer';
 import actionNames from '../store/actionConstants';
 
 const constState = {
-  bowlingTeam: 'Team2',
-  battingTeam: 'Team1',
+  bowlingTeam: 'Team 2',
+  battingTeam: 'Team 1',
   currentBowlsBowled: 0,
   totalOvers: 20,
   previousInningScore: {
